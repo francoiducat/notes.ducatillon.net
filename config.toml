@@ -1,0 +1,29 @@
+baseURL = "francoiducat.github.io.git"
+languageCode = "en-us"
+title = "blog.ducatillon.net"
+theme = "ananke"
+
+DefaultContentLanguage = "en"
+SectionPagesMenu = "main"
+Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[params]
+  description = "I am the description"
+  #site_logo = "https://www.ghostscript.com/images/ghostscript_logo.png"
+  #background_color_class = "bg-gray"
+  #body_classes = "avenir bg-near-white"
+  #custom_css = ["css/custom.css","css/custom2.css"]
+  background_color_class = "bg-black"
+  featured_image = "/images/gohugo-default-sample-hero-image.jpg"
+  recent_posts_number = 2
+  github = "https://github.com/francoiducat"
+  linkedin = "https://fr.linkedin.com/in/francoisducatillon"
+#[menu]
+# [[menu.main]]
+#   name = "About"
+#   url = "google.com"
+# [[menu.main]]
+#   name = "Notes"
+#   url = "decathlon.fr"
