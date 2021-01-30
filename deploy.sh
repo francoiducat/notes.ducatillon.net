@@ -8,7 +8,7 @@ printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 # Build the project.
 # if using a theme, replace with `hugo -t <YOURTHEME>`
 printf "\033[0;32mBuilding the project...\033[0m\n"
-hugo -t ananke
+hugo
 
 # Go To Public folder
 printf "\033[0;32mGoing to public...\033[0m\n"
