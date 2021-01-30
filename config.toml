@@ -1,4 +1,4 @@
-baseURL = "https://francoiducat.github.io"
+baseURL = ""
 languageCode = "en-us"
 title = "blog.ducatillon.net"
 theme = "ananke"
