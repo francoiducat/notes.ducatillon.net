@@ -20,6 +20,7 @@ enableRobotsTXT = true
   recent_posts_number = 2
   github = "https://github.com/francoiducat"
   linkedin = "https://fr.linkedin.com/in/francoisducatillon"
+  ananke_process_css = false
 #[menu]
 # [[menu.main]]
 #   name = "About"
