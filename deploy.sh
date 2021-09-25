@@ -1,4 +1,4 @@
-I #!/bin/sh
+#!/bin/sh
 
 # If a command fails then the deploy stops
 set -e
@@ -11,11 +11,7 @@ hugo
 # Add changes to git.
 git add .
 # Commit changes.
-msg="rebuilding site $(date)"
-if [ -n "$*" ]; then
-	msg="$*"
-fi
-git commit -m "$msg"
+git commit -m "$1"
 # Pushing changes.
 git push
 
@@ -28,11 +24,7 @@ cd ../francoiducat.github.io
 # Add changes to git.
 git add .
 # Commit changes.
-msg="rebuilding site $(date)"
-if [ -n "$*" ]; then
-	msg="$*"
-fi
-git commit -m "$msg"
+git commit -m "$1"
 # Pushing changes.
 git push
 
