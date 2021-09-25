@@ -20,8 +20,8 @@ git commit -m "$msg"
 git push
 
 
-mv -R public/ ../francoiducat.github.io
-cd francoiducat.github.io
+mv public/ ../francoiducat.github.io
+cd ../francoiducat.github.io
 # Add changes to git.
 git add .
 # Commit changes.
