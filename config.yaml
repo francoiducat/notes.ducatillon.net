@@ -1,0 +1,4 @@
+baseURL : https://francoiducat.github.io
+languageCode :  en-us
+title : FDUCAT Notebook
+theme: book

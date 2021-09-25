@@ -1,4 +1,3 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/francoiducat/francoiducat.github.io.git
-	branch = main
+[submodule "themes/book"]
+	path = themes/book
+	url = https://github.com/alex-shpak/hugo-book
