@@ -42,8 +42,12 @@ git push
 ### Shortcut add & commit all files
 Without shortcut
 ```
-git add fileToAdd.txt
+git add .
 git commit -m "commit message"
+```
+With shortcut
+```
+git commit -am "commit message"
 ```
 
 ### Show git history
