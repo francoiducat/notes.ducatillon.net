@@ -11,7 +11,6 @@ googleAnalytics: G-SQK9KWNWZY
 #  information on 'doc' type pages.
 enableGitInfo: true
 
-
 params:
   BookRepo: https://github.com/francoiducat/francoiducat.github.io.sources
   BookCommitPath: commit
