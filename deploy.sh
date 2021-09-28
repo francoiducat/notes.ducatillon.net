@@ -16,6 +16,7 @@ git commit -m "$1"
 git push
 
 
+rm ../francoiducat.github.io/en.search*
 cp -R public/* ../francoiducat.github.io/
 rm -R public
 
