@@ -1,6 +1,6 @@
 ## Compress PDF offline with ghostscript
 
-![Ghoscript_logo](https://www.ghostscript.com/images/ghostscript_logo.png)
+![Ghoscript_logo](https://www.ghostscript.com/images/logos/ghostscript-plus-text.png)
 
 I found this great tool to compress pdf (python script) from the command line.
 
