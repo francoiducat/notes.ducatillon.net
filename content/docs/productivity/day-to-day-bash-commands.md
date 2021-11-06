@@ -1,8 +1,12 @@
 ## Day to day bash commands for developers
 
+### Edit npm registry
 
-npm config set registry https://nexus.dktapp.cloud/repository/npm_proxies/
-npm config get registry
+#### Set
+`npm config set registry https://your-custom-npm-registry.com/`
 
-Change your .npmrc  file with this new registry URL:
-registry=https://nexus.dktapp.cloud/repository/npm_proxies/
+This command updates your `.npmrc` file with your new registry URL:
+registry=https://your-custom-npm-registry.com/
+
+#### Get
+`npm config get registry`

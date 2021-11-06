@@ -4,7 +4,7 @@
 
 This [video][video] explains very clearly how to record your screen with audio on mac os for free.
 
-Sources:
+### Sources
 - https://github.com/ExistentialAudio/BlackHole/wiki/Multi-Output-Device
 
 [video]: https://www.youtube.com/watch?v=prUVS0HF2gU

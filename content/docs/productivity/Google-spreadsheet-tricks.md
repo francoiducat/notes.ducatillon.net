@@ -1,4 +1,3 @@
-
 # Google spreadsheet tricks
 
 ## Remove characters from a string in a cell with Google spreadsheet
