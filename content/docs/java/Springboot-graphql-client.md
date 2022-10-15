@@ -1,3 +1,7 @@
+---
+draft: false
+---
+
 # Minimal Graphql client request with Springboot
 
 ![Photo from Farzad Nazifi under Unsplash Licence](https://miro.medium.com/max/1280/1*eyC_K8xUyRHqlIaIbghHyg.jpeg)
