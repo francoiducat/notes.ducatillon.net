@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Batch resize image using Mac OS command line # Usage # ~ sips -Z 720 *.jpg Adjsut max image ratio: 640,720,1024,1280 etc.">
+<meta name="description" content=" Image command line using Mac OS Terminal # Batch resize image # Usage # ~ sips -Z 720 *.jpg Adjsut max image ratio examples: 640,720,1024,1280 etc.
+Combine two images into one # Prerequisites # ~ brew install imagemagick Usage # ~ convert &#43;append image1.png image2.png combined_image.png Result # Image 1: # Image 2: # Combined image: # ">
 <meta name="theme-color" content="#FFFFFF">
 <meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
-<meta property="og:description" content="Batch resize image using Mac OS command line # Usage # ~ sips -Z 720 *.jpg Adjsut max image ratio: 640,720,1024,1280 etc." />
+<meta property="og:description" content=" Image command line using Mac OS Terminal # Batch resize image # Usage # ~ sips -Z 720 *.jpg Adjsut max image ratio examples: 640,720,1024,1280 etc.
+Combine two images into one # Prerequisites # ~ brew install imagemagick Usage # ~ convert &#43;append image1.png image2.png combined_image.png Result # Image 1: # Image 2: # Combined image: # " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://francoiducat.github.io/docs/productivity/resize-images-command-line/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://francoiducat.github.io/docs/productivity/images-command-line/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-10-15T17:00:25+02:00" />
 
-<title>Resize Images Command Line | FDUCAT Notebook</title>
+<title>Images Command Line | FDUCAT Notebook</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.e610a473b48f5c1534482d83a4e87390c16d300d987747c145b901e5d0bfe318.css" integrity="sha256-5hCkc7SPXBU0SC2DpOhzkMFtMA2Yd0fBRbkB5dC/4xg=" crossorigin="anonymous">
   <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.fd9e936123feb6263a97db601157c2f2e58dbcf85c95dc9de1bc29cba4e980bf.js" integrity="sha256-/Z6TYSP&#43;tiY6l9tgEVfC8uWNvPhcldyd4bwpy6TpgL8=" crossorigin="anonymous"></script>
+  <script defer src="/en.search.min.8e8cd458590888dfb5d67167cfcac942046d3e4aa392a9dc314baaf3a7ea0aa3.js" integrity="sha256-jozUWFkIiN&#43;11nFnz8rJQgRtPkqjkqncMUuq86fqCqM=" crossorigin="anonymous"></script>
 
 <script type="application/javascript">
 var doNotTrack = false;
@@ -195,7 +196,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/productivity/mac-screen-record-with-audio/" class="">MAC Screen Record With Audio</a>
+    <a href="/docs/productivity/images-command-line/" class="active">Images Command Line</a>
   
 
         </li>
@@ -208,7 +209,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="/docs/productivity/resize-images-command-line/" class="active">Resize Images Command Line</a>
+    <a href="/docs/productivity/mac-screen-record-with-audio/" class="">MAC Screen Record With Audio</a>
   
 
         </li>
@@ -298,7 +299,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Resize Images Command Line</strong>
+  <strong>Images Command Line</strong>
 
   <label for="toc-control">
     
@@ -314,7 +315,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#batch-resize-image-using-mac-os-command-line">Batch resize image using Mac OS command line</a>
+    <li><a href="#batch-resize-image">Batch resize image</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#combine-two-images-into-one">Combine two images into one</a>
       <ul>
         <li></li>
       </ul>
@@ -331,16 +337,53 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h2 id="batch-resize-image-using-mac-os-command-line">
-  Batch resize image using Mac OS command line
-  <a class="anchor" href="#batch-resize-image-using-mac-os-command-line">#</a>
+  <article class="markdown"><h1 id="image-command-line-using-mac-os-terminal">
+  Image command line using Mac OS Terminal
+  <a class="anchor" href="#image-command-line-using-mac-os-terminal">#</a>
+</h1>
+<h2 id="batch-resize-image">
+  Batch resize image
+  <a class="anchor" href="#batch-resize-image">#</a>
 </h2>
 <h4 id="usage">
   Usage
   <a class="anchor" href="#usage">#</a>
 </h4>
 <pre tabindex="0"><code> ~ sips -Z 720 *.jpg
-</code></pre><p>Adjsut max image ratio: 640,720,1024,1280 etc.</p>
+</code></pre><p>Adjsut max image ratio examples: 640,720,1024,1280 etc.</p>
+<h2 id="combine-two-images-into-one">
+  Combine two images into one
+  <a class="anchor" href="#combine-two-images-into-one">#</a>
+</h2>
+<h4 id="prerequisites">
+  Prerequisites
+  <a class="anchor" href="#prerequisites">#</a>
+</h4>
+<pre tabindex="0"><code> ~ brew install imagemagick
+</code></pre><h4 id="usage-1">
+  Usage
+  <a class="anchor" href="#usage-1">#</a>
+</h4>
+<pre tabindex="0"><code> ~ convert +append image1.png image2.png combined_image.png
+</code></pre><h4 id="result">
+  Result
+  <a class="anchor" href="#result">#</a>
+</h4>
+<h4 id="image-1">
+  Image 1:
+  <a class="anchor" href="#image-1">#</a>
+</h4>
+<p><img src="/img/image1.png" alt="image1" /></p>
+<h5 id="image-2">
+  Image 2:
+  <a class="anchor" href="#image-2">#</a>
+</h5>
+<p><img src="/img/image2.png" alt="image2" /></p>
+<h5 id="combined-image">
+  Combined image:
+  <a class="anchor" href="#combined-image">#</a>
+</h5>
+<p><img src="/img/combined_image.png" alt="combined_image" /></p>
 </article>
  
       
@@ -349,12 +392,6 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/francoiducat/francoiducat.github.io.sources/commit/2e8f58f1168540175da25f3341f38f7fbe386a8f" title='Last modified by francoiducat | Oct 15, 2022' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>Oct 15, 2022</span>
-    </a>
-  </div>
 
 
 
@@ -388,7 +425,12 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#batch-resize-image-using-mac-os-command-line">Batch resize image using Mac OS command line</a>
+    <li><a href="#batch-resize-image">Batch resize image</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#combine-two-images-into-one">Combine two images into one</a>
       <ul>
         <li></li>
       </ul>
