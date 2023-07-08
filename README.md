@@ -2,9 +2,9 @@
 
 ## TL;DR
 
-- [Static Web Site Sources Repository](https://github.com/francoiducat/francoiducat.github.io.sources)
-- [Static Web Site Repository](https://github.com/francoiducat/francoiducat.github.io)
-- [Static Web Site](https://francoiducat.github.io)
+- [Hugo Static Web Site Sources Repository](https://github.com/francoiducat/francoiducat.github.io.sources)
+- [Hugo Static Web Site Content Repository](https://github.com/francoiducat/francoiducat.github.io)
+- [Hugo Static Web Site](https://francoiducat.github.io)
 
 This repository hosts Hugo sources for [francoiducat.github.io](francoiducat.github.io) static website.
 
