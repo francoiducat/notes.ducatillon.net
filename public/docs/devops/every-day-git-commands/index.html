@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Every day Git commands for developers # Here are some day to day useful git commands
+Refresh git repo after .gitignore edition # When you add a new file to the .gitignore it is not immediatly ignored. It stills appears on git status
+To refresh the git repo
+git rm -rf --cached . or
+git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Discard changes on a file # git checkout fileYouDiscardChanges Show all remotes # This show origin and upstream remotes">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="" />
+<meta property="og:description" content="Every day Git commands for developers # Here are some day to day useful git commands
+Refresh git repo after .gitignore edition # When you add a new file to the .gitignore it is not immediatly ignored. It stills appears on git status
+To refresh the git repo
+git rm -rf --cached . or
+git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Discard changes on a file # git checkout fileYouDiscardChanges Show all remotes # This show origin and upstream remotes" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://francoiducat.github.io/docs/devops/every-day-git-commands/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2023-07-08T11:38:19+02:00" />
+<title>Every Day Git Commands | FDUCAT Notebook</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.e610a473b48f5c1534482d83a4e87390c16d300d987747c145b901e5d0bfe318.css" integrity="sha256-5hCkc7SPXBU0SC2DpOhzkMFtMA2Yd0fBRbkB5dC/4xg=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.78166b9d46e23e0ea915cb6887a30b633e7bc4fad10c8b6b9f6fa532271c19ba.js" integrity="sha256-eBZrnUbiPg6pFctoh6MLYz57xPrRDItrn2&#43;lMiccGbo=" crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-199278356-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>FDUCAT Notebook</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Devops</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-bash-commands/" class="">Day to Day Bash Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-kubernetes-command/" class="">Day to Day Kubernetes Command</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/every-day-git-commands/" class="active">Every Day Git Commands</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Java</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/springboot-graphql-client/" class="">Springboot Graphql Client</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Process</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/process/the-virtuous-cycle-of-code-review/" class="">The Virtuous Cycle of Code Review</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Productivity</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/google-spreadsheet-tricks/" class="">Google Spreadsheet Tricks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/mac-screen-record-with-audio/" class="">MAC Screen Record With Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/save-storage-pdf-images-videos/" class="">Save Storage Pdf Images Videos</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Web</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/web/embed-pdf-in-html/" class="">Embed Pdf in HTML</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Notes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Every Day Git Commands</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#refresh-git-repo-after-gitignore-edition">Refresh git repo after .gitignore edition</a></li>
+        <li><a href="#discard-changes-on-a-file">Discard changes on a file</a></li>
+        <li><a href="#show-all-remotes">Show all remotes</a></li>
+        <li><a href="#add-upstream-remote">Add upstream remote</a></li>
+        <li><a href="#remove-a-remote-file">Remove a remote file</a></li>
+        <li><a href="#shortcut-add--commit-all-files">Shortcut add &amp; commit all files</a></li>
+        <li><a href="#show-git-history">Show git history</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="every-day-git-commands-for-developers">
+  Every day Git commands for developers
+  <a class="anchor" href="#every-day-git-commands-for-developers">#</a>
+</h1>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png" alt="git" /></p>
+<p>Here are some day to day useful git commands</p>
+<h3 id="refresh-git-repo-after-gitignore-edition">
+  Refresh git repo after .gitignore edition
+  <a class="anchor" href="#refresh-git-repo-after-gitignore-edition">#</a>
+</h3>
+<p>When you add a new file to the <code>.gitignore</code> it is not immediatly ignored. It stills appears on <code>git status</code></p>
+<p>To refresh the git repo</p>
+<pre tabindex="0"><code> git rm -rf --cached .
+</code></pre><p>or</p>
+<pre tabindex="0"><code> git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo
+</code></pre><h3 id="discard-changes-on-a-file">
+  Discard changes on a file
+  <a class="anchor" href="#discard-changes-on-a-file">#</a>
+</h3>
+<pre tabindex="0"><code> git checkout fileYouDiscardChanges
+</code></pre><h3 id="show-all-remotes">
+  Show all remotes
+  <a class="anchor" href="#show-all-remotes">#</a>
+</h3>
+<p>This show origin and upstream remotes</p>
+<pre tabindex="0"><code>git remote -v
+git remote show origin #shows branches, tags etc.
+git remote show upstream #shows branches, tags etc.
+</code></pre><h3 id="add-upstream-remote">
+  Add upstream remote
+  <a class="anchor" href="#add-upstream-remote">#</a>
+</h3>
+<p>(vs origin remote)</p>
+<pre tabindex="0"><code>git remote add upstream git@github.com:username/git-repo.git
+</code></pre><h3 id="remove-a-remote-file">
+  Remove a remote file
+  <a class="anchor" href="#remove-a-remote-file">#</a>
+</h3>
+<p>Remove a remote file or directory from a Git repository without deleting it from the local filesystem</p>
+<h4 id="for-single-file">
+  For single file:
+  <a class="anchor" href="#for-single-file">#</a>
+</h4>
+<pre tabindex="0"><code>git rm --cached myremotefiletodelete.log
+git commit -m &#34;remove file from repo&#34;
+git push
+</code></pre><h4 id="for-single-directory">
+  For single directory:
+  <a class="anchor" href="#for-single-directory">#</a>
+</h4>
+<pre tabindex="0"><code>git rm --cached -r myremotedirectortytodelete
+git commit -m &#34;remove folder from repo&#34;
+git push
+</code></pre><h3 id="shortcut-add--commit-all-files">
+  Shortcut add &amp; commit all files
+  <a class="anchor" href="#shortcut-add--commit-all-files">#</a>
+</h3>
+<p>Without shortcut</p>
+<pre tabindex="0"><code>git add .
+git commit -m &#34;commit message&#34;
+</code></pre><p>With shortcut</p>
+<pre tabindex="0"><code>git commit -am &#34;commit message&#34;
+</code></pre><h3 id="show-git-history">
+  Show git history
+  <a class="anchor" href="#show-git-history">#</a>
+</h3>
+<p>using pretty format</p>
+<pre tabindex="0"><code>git log --pretty=format:&#34;%h - %an, %ar : %s&#34;
+</code></pre></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/francoiducat/francoiducat.github.io.sources/commit/8e7d76ef5c07e7920d3ebda0d4c2e2d3311ec2e4" title='Last modified by francoiducat | Jul 8, 2023' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>Jul 8, 2023</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#refresh-git-repo-after-gitignore-edition">Refresh git repo after .gitignore edition</a></li>
+        <li><a href="#discard-changes-on-a-file">Discard changes on a file</a></li>
+        <li><a href="#show-all-remotes">Show all remotes</a></li>
+        <li><a href="#add-upstream-remote">Add upstream remote</a></li>
+        <li><a href="#remove-a-remote-file">Remove a remote file</a></li>
+        <li><a href="#shortcut-add--commit-all-files">Shortcut add &amp; commit all files</a></li>
+        <li><a href="#show-git-history">Show git history</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
