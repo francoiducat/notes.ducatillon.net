@@ -5,7 +5,7 @@ theme: book
 
 # (Optional) Set Google Analytics if you use it to track your website.
 # Always put it on the top of the configuration file, otherwise it won't work
-googleAnalytics: UA-199278356-1
+googleAnalytics: G-PXY5L88X6W
 
 # (Optional) Set this to true to enable 'Last Modified by' date and git author
 #  information on 'doc' type pages.
