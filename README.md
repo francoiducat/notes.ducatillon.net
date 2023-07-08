@@ -18,14 +18,7 @@ hugo server
 
 ## Deploy to github pages
 
-Run this command
-
 ```
-hugo
+./deploy.sh "deployCommitMessage"
 ```
 
-It produces a `public` folder.
-
-# Hugo static website repository
-
-The content og the `public` folder should lie in this [repository](https://github.com/francoiducat/francoiducat.github.io).
