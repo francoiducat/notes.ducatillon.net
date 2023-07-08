@@ -26,6 +26,6 @@ Spring Boot apps playground [repos](https://github.com/francoiducat?tab=reposito
 
 ## DevOps
 
-Day to day swiss army knife terminal commands.
+Day to day swiss army knife [terminal commands](https://notes.ducatillon.net/docs/devops/day-to-day-bash-commands/).
 
 {{< /columns >}}
