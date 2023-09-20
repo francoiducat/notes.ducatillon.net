@@ -97,11 +97,10 @@ Great alternative in a shortcut to search in your terminal history:
 - `postgres=# DROP DATABASE db_name WITH (FORCE);` Drop database with force
 - `postgres=# CREATE DATABASE my_db OWNER fducat;` Create database specific the owner
 - `postgres=# SELECT usename, client_addr, application_name, count(1) FROM pg_stat_activity group by 1,2,3;`: Track user activity
+- `pg_dump -d database_name -t table_to_dump > dumped_table.sql`: Dump table
+- `COPY table_name FROM '/path/to/csv/dump.txt' WITH (FORMAT csv);`: Restore dump file
+- `SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE usename ='francois.ducatillon';`: Track user activity
 
-
-# PGADMIN
-SELECT pg_terminate_backend(pid) FROM pg_stat_activity
-WHERE usename ='francois.ducatillon';
 ## Mysql commands
 
 - `mysql -u user -p mypassword dbname` : Se connecter à une base de données 
