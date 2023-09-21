@@ -5,21 +5,21 @@
 
 ## Bash commands
 
-- `cd nom du dossier` entrer dans un dossier 
+- `cd folder_name` entrer dans un dossier 
 - `cd ..` : revenir au dossier précédant 
-- `cat nomdufichier` : affiche le contenu d'un fichier 
+- `cat file_name` : affiche le contenu d'un fichier 
 - `pwd` : dis moi où je suis ! 
-- `mkdir nomdudossier` : créer un dossier
+- `mkdir folder_name` : créer un dossier
 - `cd / :` Aller à la racine du serveur 
 - `cd :` Aller au répertoire de l'utilisateur (la "home directory" de l'utilisateur) 
 - `df -h :` Affiche les informations sur le volume de stockage. (h pour **h**uman) 
 - `du -hd1 (anciennement du -h --max-depth=1):` Affiche les informations sur le volume de stockage du répertoire dans lequel on se trouve.("disk free","disk usage")
-- `rmdir nomdudossier :` supprimer un dossier
-- `rmdir -rf nomdudossier :` supprimer un dossier **non vide.** Attention, cela supprime tous le contenu à l'intérieur du dossier (sous dossiers et fichiers) 
+- `rmdir file_name :` supprimer un dossier
+- `rmdir -rf file_name :` supprimer un dossier **non vide.** Attention, cela supprime tous le contenu à l'intérieur du dossier (sous dossiers et fichiers) 
 - `touch nomdufichier` : créer un fichier ou mettre à jour la date de modification sur un fichier existant. 
-- `chmod 700 nomdufichier` : Modifier les permissions du fichier/dossier 
-- `chmod 777 -R dossier` : Modifier les permissions du dossier ainsi que celles de tous les sous-dossiers et fichiers inclus 
-- `chwon -R root:root mondossier` : Modifie le propriétaire d'un dossier (avec sous dossiers et fichiers inclus dans mondossier) 
+- `chmod 700 file_name` : Modifier les permissions du fichier/dossier 
+- `chmod 777 -R folder_name` : Modifier les permissions du dossier ainsi que celles de tous les sous-dossiers et fichiers inclus 
+- `chwon -R root:root folder_name` : Modifie le propriétaire d'un dossier (avec sous dossiers et fichiers inclus dans mondossier) 
 - `passwd utilisateur`: Changer le mot de passe de l'utilisateur 
 - `su -` : Se connecter en root 
 - `su -utilisateur` : Se connecter avec utilisateur 
@@ -95,11 +95,14 @@ Great alternative in a shortcut to search in your terminal history:
 - `postgres=# \connect databasename` : Connect to a database from postgres prompt
 - `postgres=# \dt+` : List tables with details (dans l'invité de commande postgres)
 - `postgres=# DROP DATABASE db_name WITH (FORCE);` Drop database with force
-- `postgres=# CREATE DATABASE my_db OWNER fducat;` Create database specific the owner
+- `postgres=# CREATE DATABASE my_db OWNER username;` Create database specific the owner
 - `postgres=# SELECT usename, client_addr, application_name, count(1) FROM pg_stat_activity group by 1,2,3;`: Track user activity
 - `pg_dump -d database_name -t table_to_dump > dumped_table.sql`: Dump table
-- `COPY table_name FROM '/path/to/csv/dump.txt' WITH (FORMAT csv);`: Restore dump file
-- `SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE usename ='francois.ducatillon';`: Track user activity
+- `COPY table_name FROM \'/path/to/csv/dump.txt\' WITH (FORMAT csv);`: Insert data from csv file into a table (No header needed in the text file)
+- `SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE usename ='john.doe';`: Track user activity
+- `SELECT pg_sequence_last_value('sequence_name')`: Show sequence last value
+- `SELECT nextval('sequence_name')`: Show sequence next value
+- `SELECT * from information_schema.sequences WHERE sequence_name='sequence_name'`: Show sequence details
 
 ## Mysql commands
 
