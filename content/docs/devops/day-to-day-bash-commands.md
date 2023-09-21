@@ -98,8 +98,8 @@ Great alternative in a shortcut to search in your terminal history:
 - `postgres=# CREATE DATABASE my_db OWNER username;` Create database specific the owner
 - `postgres=# SELECT usename, client_addr, application_name, count(1) FROM pg_stat_activity group by 1,2,3;`: Track user activity
 - `pg_dump -d database_name -t table_to_dump > dumped_table.sql`: Dump table
-- `COPY table_name FROM \'/path/to/csv/dump.txt\' WITH (FORMAT csv);`: Insert data from csv file into a table (No header needed in the text file)
-- `SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE usename ='john.doe';`: Track user activity
+- `COPY table_name FROM '/path/to/csv/dump.txt' WITH (FORMAT csv);`: Insert data from csv file into a table (No header needed in the text file)
+- `SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE usename ='john.doe'`: Track user activity
 - `SELECT pg_sequence_last_value('sequence_name')`: Show sequence last value
 - `SELECT nextval('sequence_name')`: Show sequence next value
 - `SELECT * from information_schema.sequences WHERE sequence_name='sequence_name'`: Show sequence details
