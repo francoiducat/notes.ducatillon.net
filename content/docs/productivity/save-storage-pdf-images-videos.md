@@ -78,14 +78,26 @@ Adjsut max image ratio examples: 640,720,1024,1280 etc.
 ffmpeg
 ```
 
-### Usage
+### Compress
 ```
-ffmpeg -i source480.mov -r 15 outputSmall.gif
+ffmpeg -i input.mp4 -r 15 output.mp4
+```
+
+### Reduce half original size
+```
+ffmpeg -i input.mp4  -vf "scale=iw/2:ih/2" half-size.mp4
+```
+
+### Video to gif
+```
+ffmpeg -i input.mp4 -r 15 output.gif
 ```
 
 ## Gmail clean
 
+```
 larger_than:5m smaller_than:8M
 size:5mb has:attachment
-before: 2011 after:2005/04/17 
+before: 2011 after:2005/04/17
+```
 

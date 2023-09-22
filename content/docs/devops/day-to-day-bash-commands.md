@@ -33,7 +33,6 @@
 - `~/` : équivaut à /home/dossierUser 
 - `ls -l > ls-l.txt` : Liste le contenu du répertoire dans le fichier ls-l.txt 
 - `ls -l > ls-l.txt 2>&1` : Liste uniquement les erreurs liés à la commande ls -l dans le fichier ls-l.txt 
-- `scp /Users/john/Documents/mondossier/* user@IP:~/mondossier` : Envoyer un fichier vers un serveur 
 - `scp -r /Users/john/Documents/mondossier/* user@IP:~/mondossier` : Envoyer un fichier serveur dont le contenu des dossiers 
 - `scp -P 5555 /Users/john/archive.tar.gz user@IP:~/mondossier` : Envoyer un fichier compressé en spécifiant le port. (-P) 
 - `cp -rp /var/tmp/prestashop_1.5.2.0  /var/www/html/` : Déplacer (=copier/coller) un répertoire d'un emplacement A à un emplacement B en gardant les permissions des fichiers.
