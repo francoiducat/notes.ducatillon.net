@@ -15,3 +15,8 @@ params:
   BookRepo: https://github.com/francoiducat/francoiducat.github.io.sources
   BookCommitPath: commit
   BookDateFormat: Jan 2, 2006
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
