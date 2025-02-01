@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on FDUCAT Notebook</title>
-    <link>https://notes.ducatillon.net/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on FDUCAT Notebook</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 27 Sep 2021 18:31:15 +0200</lastBuildDate>
-    <atom:link href="https://notes.ducatillon.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Réseau</title>
-      <link>https://notes.ducatillon.net/tags/r%C3%A9seau/</link>
+      <link>/tags/r%C3%A9seau/</link>
       <pubDate>Tue, 11 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://notes.ducatillon.net/tags/r%C3%A9seau/</guid>
+      <guid>/tags/r%C3%A9seau/</guid>
       <description></description>
     </item>
     <item>
       <title>Css</title>
-      <link>https://notes.ducatillon.net/tags/css/</link>
+      <link>/tags/css/</link>
       <pubDate>Thu, 02 Dec 2010 00:00:00 +0000</pubDate>
-      <guid>https://notes.ducatillon.net/tags/css/</guid>
+      <guid>/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Jquery</title>
-      <link>https://notes.ducatillon.net/tags/jquery/</link>
+      <link>/tags/jquery/</link>
       <pubDate>Thu, 02 Dec 2010 00:00:00 +0000</pubDate>
-      <guid>https://notes.ducatillon.net/tags/jquery/</guid>
+      <guid>/tags/jquery/</guid>
       <description></description>
     </item>
   </channel>
