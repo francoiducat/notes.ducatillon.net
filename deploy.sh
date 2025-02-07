@@ -13,7 +13,7 @@ git add .
 # Commit changes.
 git commit -m "$1"
 # Pushing changes.
-git push
+git push --force
 
 
 rm ../francoiducat.github.io/en.search* || true
@@ -27,6 +27,6 @@ git add .
 # Commit changes.
 git commit -m "$1"
 # Pushing changes.
-git push
+git push --force
 
 printf "\033[0;32mSucessfully Deployed to GitHub Pages...\033[0m\n"
