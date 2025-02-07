@@ -101,7 +101,7 @@ history | grep word_to_search">
 <link rel="canonical" href="/docs/devops/day-to-day-bash-commands/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.e7cc925b4ee4af3ac2063a966dcf2e4169949d3773db84e8507af76187605f18.js" ></script>
+  <script defer src="/en.search.min.193b070c26960ad82add65f49ca037cdc44b7e7f500468d0e8270521d0efdd1d.js" ></script>
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
       <script>
@@ -614,17 +614,23 @@ https://github.com/alex-shpak/hugo-book
 <li><code>gg</code> : Aller à la fin du fichier.</li>
 <li><code>G</code> : Aller au début du fichier.</li>
 <li><code>:echo line('$')</code> : Permet d&rsquo;afficher le nombre de lignes du fichier en question.</li>
+<li><code>vim -es -c &quot;:g/\[yolo/d&quot; -c &quot;:wq&quot; file.md</code> : Removes all lines containing <code>\[yolo</code> in <code>file.md</code></li>
+<li><code>vim -es -c &quot;%s/roger/jane/g&quot; -c &quot;:wq&quot; file.md</code> : Replace <code>roger</code> with <code>jane</code> in <code>file.md</code></li>
 </ul>
 <h2 id="network-commands">
   Network commands
   <a class="anchor" href="#network-commands">#</a>
 </h2>
 <ul>
-<li><code>host nomdedomaine.com</code> : Affiche l&rsquo;adresse IP du domaine</li>
+<li><code>host host.com</code> : Affiche l&rsquo;adresse IP du domaine</li>
 <li><code>hostname</code> : Affiche le nom de la machine</li>
-<li><code>nslookup nomdedomaine.com</code> : Affiche l&rsquo;adresse IP du domaine</li>
-<li><code>tracert nomdedomaine.com</code> : Affiche la route réseau empruntée</li>
-<li><code>telnet nomdedomaine 53</code> : Moyen de vérifier que ma machine peut communiquer avec nomdedomaine sur le port 53</li>
+<li><code>nslookup host.com</code> : Affiche l&rsquo;adresse IP du domaine</li>
+<li><code>tracert host.com</code> : Affiche la route réseau empruntée</li>
+<li><code>ssh -p 22 user@host.com</code> : Connect host.com on port 22</li>
+<li><code>telnet host 53</code> : Moyen de vérifier que ma machine peut communiquer avec nomdedomaine sur le port 53</li>
+<li><code>nc -zv host.com 22</code> : When telnet is unavailable, use nc to check whether port 22 is open on host.com server</li>
+<li><code>rsync -avz -e &quot;ssh -p 8080&quot; user@host.com:/home/path/to/folder/ /path/to/folder/on/local/machine/</code> : Sync a folder content from a remote server to a local machine</li>
+<li><code>dig github.com +noall +answer -t A</code> : Display A records for github.com</li>
 </ul>
 <h2 id="split-a-hug-file">
   Split a hug file

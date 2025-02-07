@@ -130,14 +130,21 @@ Great alternative in a shortcut to search in your terminal history:
 - `gg` : Aller à la fin du fichier. 
 - `G` : Aller au début du fichier. 
 - `:echo line('$')` : Permet d'afficher le nombre de lignes du fichier en question.
+- `vim -es -c ":g/\[yolo/d" -c ":wq" file.md` : Removes all lines containing `\[yolo` in `file.md` 
+- `vim -es -c "%s/roger/jane/g" -c ":wq" file.md` : Replace `roger` with `jane` in `file.md` 
+
 
 ## Network commands
 
-- `host nomdedomaine.com` : Affiche l'adresse IP du domaine 
+- `host host.com` : Affiche l'adresse IP du domaine 
 - `hostname` : Affiche le nom de la machine 
-- `nslookup nomdedomaine.com` : Affiche l'adresse IP du domaine 
-- `tracert nomdedomaine.com` : Affiche la route réseau empruntée 
-- `telnet nomdedomaine 53` : Moyen de vérifier que ma machine peut communiquer avec nomdedomaine sur le port 53
+- `nslookup host.com` : Affiche l'adresse IP du domaine 
+- `tracert host.com` : Affiche la route réseau empruntée
+- `ssh -p 22 user@host.com` : Connect host.com on port 22
+- `telnet host 53` : Moyen de vérifier que ma machine peut communiquer avec nomdedomaine sur le port 53
+- `nc -zv host.com 22` : When telnet is unavailable, use nc to check whether port 22 is open on host.com server
+- `rsync -avz -e "ssh -p 8080" user@host.com:/home/path/to/folder/ /path/to/folder/on/local/machine/` : Sync a folder content from a remote server to a local machine
+- `dig github.com +noall +answer -t A` : Display A records for github.com
 
 ## Split a hug file
 
