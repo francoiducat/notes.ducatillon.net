@@ -6,10 +6,10 @@
 # If a command fails then the deploy stops
 set -e
 
-printf "\033[0;32mRemove all lines...\033[0m\n"
+printf "\033[0;32mProcessing all files in current directory...\033[0m\n"
 
 
-# Find all .html files in the current directory and subdirectories
+# Find all .md files in the current directory and subdirectories
 find . -type f -name "*.md" | while read file; do
   # Run vim on each file to remove all lines containing foo
   vim -es -c ":g/foo/d" -c ":wq" "$file"
