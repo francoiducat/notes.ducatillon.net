@@ -23,6 +23,13 @@
     </item>
     <item>
       <title></title>
+      <link>/docs/productivity/pdf_to_doc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/docs/productivity/pdf_to_doc/</guid>
+      <description>&lt;h2 id=&#34;convert-pdf-to-docx&#34;&gt;&#xA;  Convert PDF to Docx&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#convert-pdf-to-docx&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h2 id=&#34;prerequesites-for-macos&#34;&gt;&#xA;  Prerequesites for macos&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#prerequesites-for-macos&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;brew install pipx&#xA;pipx install pdf2docx&lt;/p&gt;&#xA;&lt;h2 id=&#34;cli-usage&#34;&gt;&#xA;  CLI usage&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#cli-usage&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;code&gt;pdf2docx convert file.pdf file.docx&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;sources&#34;&gt;&#xA;  Sources&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#sources&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;(&lt;a href=&#34;https://github.com/ArtifexSoftware/pdf2docx%29[https://github.com/ArtifexSoftware/pdf2docxe]&#34;&gt;https://github.com/ArtifexSoftware/pdf2docx)[https://github.com/ArtifexSoftware/pdf2docxe]&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>/docs/productivity/save-storage-pdf-images-videos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/docs/productivity/save-storage-pdf-images-videos/</guid>
