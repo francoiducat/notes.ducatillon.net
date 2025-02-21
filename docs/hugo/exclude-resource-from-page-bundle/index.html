@@ -23,7 +23,7 @@ In this example, the image header.jpg is excluded from the page bundle.
       &lt;!-- Exclude header.jpg --&gt;
 
         {{ $image := .Resize &#34;960x webp&#34; }}      
-        &lt;img src=&#34;{{ $img_tmb.RelPermalink }}&#34;&gt;
+        &lt;img src=&#34;{{ $image.RelPermalink }}&#34;&gt;
 
       {{ end }}
     {{ end }}
@@ -34,18 +34,18 @@ In this example, the image header.jpg is excluded from the page bundle.
   <meta property="og:site_name" content="FDUCAT Notebook">
   <meta property="og:title" content="FDUCAT Notebook">
   <meta property="og:description" content="Exclude a specific Resource from a Page Bundle # This code block prevents a specific image (resource) from being included in the page bundle. This is useful when you want to exclude a specific image from being included in the page bundle. In this example, the image header.jpg is excluded from the page bundle.
-{{ $images := .Resources.ByType &#34;image&#34; }} {{ range $images }} &lt;!-- Exclude header.jpg --&gt; {{ $relPermalink := .RelPermalink }} &lt;!-- Get the relative permalink of the image --&gt; {{ $filename := index (split $relPermalink &#34;/&#34;) (sub (len (split $relPermalink &#34;/&#34;)) 1) }} &lt;!-- Extract the filename --&gt; {{ $baseFilename := (split $filename &#34;.&#34;) }} &lt;!-- Split the filename by &#34;.&#34; --&gt; {{ $baseFilename := index $baseFilename 0 }} &lt;!-- Take the first part of the split result (before the dot) --&gt; &lt;span&gt; {{ $filename }}&lt;/span&gt; {{ if not (eq $baseFilename &#34;header&#34;) }} &lt;!-- Exclude header.jpg --&gt; {{ $image := .Resize &#34;960x webp&#34; }} &lt;img src=&#34;{{ $img_tmb.RelPermalink }}&#34;&gt; {{ end }} {{ end }}">
+{{ $images := .Resources.ByType &#34;image&#34; }} {{ range $images }} &lt;!-- Exclude header.jpg --&gt; {{ $relPermalink := .RelPermalink }} &lt;!-- Get the relative permalink of the image --&gt; {{ $filename := index (split $relPermalink &#34;/&#34;) (sub (len (split $relPermalink &#34;/&#34;)) 1) }} &lt;!-- Extract the filename --&gt; {{ $baseFilename := (split $filename &#34;.&#34;) }} &lt;!-- Split the filename by &#34;.&#34; --&gt; {{ $baseFilename := index $baseFilename 0 }} &lt;!-- Take the first part of the split result (before the dot) --&gt; &lt;span&gt; {{ $filename }}&lt;/span&gt; {{ if not (eq $baseFilename &#34;header&#34;) }} &lt;!-- Exclude header.jpg --&gt; {{ $image := .Resize &#34;960x webp&#34; }} &lt;img src=&#34;{{ $image.RelPermalink }}&#34;&gt; {{ end }} {{ end }}">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-02-21T15:32:02+01:00">
+    <meta property="article:modified_time" content="2025-02-21T18:04:26+01:00">
 <title>Exclude Resource From Page Bundle | FDUCAT Notebook</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="/docs/hugo/exclude-resource-from-page-bundle/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.2eef5acb5cd4bb9e4e94b72e44c4dce2fcb5d5ff46bbec853f7cca51c26c225f.js" ></script>
+  <script defer src="/en.search.min.cfe38e733dbf7a1600dcf394ab83a25f6a7a467ad1ae5609b4a4511785cc95ba.js" ></script>
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
       <script>
@@ -460,7 +460,7 @@ In this example, the image <code>header.jpg</code> is excluded from the page bun
 </span></span><span style="display:flex;"><span>      <span style="color:#75715e">&lt;!-- Exclude header.jpg --&gt;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>        {{ $image := .Resize &#34;960x webp&#34; }}      
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $img_tmb.RelPermalink }}&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ $image.RelPermalink }}&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>      {{ end }}
 </span></span><span style="display:flex;"><span>    {{ end }}
@@ -473,7 +473,7 @@ In this example, the image <code>header.jpg</code> is excluded from the page bun
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/francoiducat/francoiducat.github.io.sources/commit/e18e3f3761649d24e2766c0686988ff70f4d9e0d" title='Last modified by fducat18 | Feb 21, 2025' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/francoiducat/francoiducat.github.io.sources/commit/64c00349f3cfbb3bc2b7b0226e1faaa8475e5409" title='Last modified by fducat18 | Feb 21, 2025' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="" />
       <span>Feb 21, 2025</span>
     </a>
