@@ -19,7 +19,7 @@ In this example, the image `header.jpg` is excluded from the page bundle.
       <!-- Exclude header.jpg -->
 
         {{ $image := .Resize "960x webp" }}      
-        <img src="{{ $img_tmb.RelPermalink }}">
+        <img src="{{ $image.RelPermalink }}">
 
       {{ end }}
     {{ end }}
