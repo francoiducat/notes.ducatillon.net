@@ -19,6 +19,16 @@ To refresh the git repo
 or
  git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo
 
+  Remove remote branch
+  #
+
+git push origin --delete my-branch
+
+  Remove locale branch
+  #
+
+git branch -D my-branch
+
   Discard changes on a file
   #
 
@@ -37,7 +47,7 @@ This show origin and upstream remotes">
 Refresh git repo after .gitignore edition # When you add a new file to the .gitignore it is not immediatly ignored. It stills appears on git status
 To refresh the git repo
 git rm -rf --cached . or
-git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Discard changes on a file # git checkout fileYouDiscardChanges Show all remotes # This show origin and upstream remotes">
+git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Remove remote branch # git push origin --delete my-branch Remove locale branch # git branch -D my-branch Discard changes on a file # git checkout fileYouDiscardChanges Show all remotes # This show origin and upstream remotes">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
@@ -48,7 +58,7 @@ git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Discard
 <link rel="canonical" href="/docs/devops/every-day-git-commands/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.cfe38e733dbf7a1600dcf394ab83a25f6a7a467ad1ae5609b4a4511785cc95ba.js" ></script>
+  <script defer src="/en.search.min.0d5811cf756400bf660fb70fa1f1096f3648a83d5847e7f48a4632af3d696a7a.js" ></script>
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
       <script>
@@ -437,9 +447,12 @@ https://github.com/alex-shpak/hugo-book
     <li>
       <ul>
         <li><a href="#refresh-git-repo-after-gitignore-edition">Refresh git repo after .gitignore edition</a></li>
+        <li><a href="#remove-remote-branch">Remove remote branch</a></li>
+        <li><a href="#remove-locale-branch">Remove locale branch</a></li>
         <li><a href="#discard-changes-on-a-file">Discard changes on a file</a></li>
         <li><a href="#show-all-remotes">Show all remotes</a></li>
         <li><a href="#add-upstream-remote">Add upstream remote</a></li>
+        <li><a href="#update-git-submodule">Update git submodule</a></li>
         <li><a href="#remove-a-remote-file">Remove a remote file</a></li>
         <li><a href="#shortcut-add--commit-all-files">Shortcut add &amp; commit all files</a></li>
         <li><a href="#show-git-history">Show git history</a></li>
@@ -473,6 +486,16 @@ https://github.com/alex-shpak/hugo-book
 <pre tabindex="0"><code> git rm -rf --cached .
 </code></pre><p>or</p>
 <pre tabindex="0"><code> git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo
+</code></pre><h3 id="remove-remote-branch">
+  Remove remote branch
+  <a class="anchor" href="#remove-remote-branch">#</a>
+</h3>
+<pre tabindex="0"><code>git push origin --delete my-branch
+</code></pre><h3 id="remove-locale-branch">
+  Remove locale branch
+  <a class="anchor" href="#remove-locale-branch">#</a>
+</h3>
+<pre tabindex="0"><code>git branch -D my-branch
 </code></pre><h3 id="discard-changes-on-a-file">
   Discard changes on a file
   <a class="anchor" href="#discard-changes-on-a-file">#</a>
@@ -492,6 +515,11 @@ git remote show upstream #shows branches, tags etc.
 </h3>
 <p>(vs origin remote)</p>
 <pre tabindex="0"><code>git remote add upstream git@github.com:username/git-repo.git
+</code></pre><h3 id="update-git-submodule">
+  Update git submodule
+  <a class="anchor" href="#update-git-submodule">#</a>
+</h3>
+<pre tabindex="0"><code>git submodule update --remote --merge
 </code></pre><h3 id="remove-a-remote-file">
   Remove a remote file
   <a class="anchor" href="#remove-a-remote-file">#</a>
@@ -607,9 +635,12 @@ bottom.
     <li>
       <ul>
         <li><a href="#refresh-git-repo-after-gitignore-edition">Refresh git repo after .gitignore edition</a></li>
+        <li><a href="#remove-remote-branch">Remove remote branch</a></li>
+        <li><a href="#remove-locale-branch">Remove locale branch</a></li>
         <li><a href="#discard-changes-on-a-file">Discard changes on a file</a></li>
         <li><a href="#show-all-remotes">Show all remotes</a></li>
         <li><a href="#add-upstream-remote">Add upstream remote</a></li>
+        <li><a href="#update-git-submodule">Update git submodule</a></li>
         <li><a href="#remove-a-remote-file">Remove a remote file</a></li>
         <li><a href="#shortcut-add--commit-all-files">Shortcut add &amp; commit all files</a></li>
         <li><a href="#show-git-history">Show git history</a></li>
