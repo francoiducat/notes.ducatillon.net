@@ -21,6 +21,18 @@ or
  git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo
 ```
 
+### Remove remote branch
+
+````
+git push origin --delete my-branch
+````
+
+### Remove locale branch
+
+````
+git branch -D my-branch
+````
+
 ### Discard changes on a file
 
 ```
@@ -42,6 +54,11 @@ git remote show upstream #shows branches, tags etc.
 
 ```
 git remote add upstream git@github.com:username/git-repo.git
+```
+
+### Update git submodule
+```
+git submodule update --remote --merge
 ```
 
 ### Remove a remote file
