@@ -23,15 +23,24 @@ or
 
 ### Remove remote branch
 
-````
+```
 git push origin --delete my-branch
-````
+```
 
 ### Remove locale branch
 
-````
+```
 git branch -D my-branch
-````
+```
+
+### Rename locale branch
+
+Switch to branch to rename
+
+```
+git branch -m new-branch-name
+```
+
 
 ### Discard changes on a file
 
