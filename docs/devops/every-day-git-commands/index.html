@@ -29,15 +29,10 @@ git push origin --delete my-branch
 
 git branch -D my-branch
 
-  Discard changes on a file
+  Rename locale branch
   #
 
- git checkout fileYouDiscardChanges
-
-  Show all remotes
-  #
-
-This show origin and upstream remotes">
+Switch to branch to rename">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
 <meta name="color-scheme" content="light dark"><meta property="og:url" content="/docs/devops/every-day-git-commands/">
@@ -47,18 +42,18 @@ This show origin and upstream remotes">
 Refresh git repo after .gitignore edition # When you add a new file to the .gitignore it is not immediatly ignored. It stills appears on git status
 To refresh the git repo
 git rm -rf --cached . or
-git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Remove remote branch # git push origin --delete my-branch Remove locale branch # git branch -D my-branch Discard changes on a file # git checkout fileYouDiscardChanges Show all remotes # This show origin and upstream remotes">
+git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo Remove remote branch # git push origin --delete my-branch Remove locale branch # git branch -D my-branch Rename locale branch # Switch to branch to rename">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-02-05T18:42:33+01:00">
+    <meta property="article:modified_time" content="2025-03-20T17:02:11+01:00">
 <title>Every Day Git Commands | FDUCAT Notebook</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
 <link rel="canonical" href="/docs/devops/every-day-git-commands/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.0d5811cf756400bf660fb70fa1f1096f3648a83d5847e7f48a4632af3d696a7a.js" ></script>
+  <script defer src="/en.search.min.3693c0ce453dc4d8263c3f057186f8116a4dce04020cf2b4eb8ca04936aae0b5.js" ></script>
 
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
       <script>
@@ -449,6 +444,7 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#refresh-git-repo-after-gitignore-edition">Refresh git repo after .gitignore edition</a></li>
         <li><a href="#remove-remote-branch">Remove remote branch</a></li>
         <li><a href="#remove-locale-branch">Remove locale branch</a></li>
+        <li><a href="#rename-locale-branch">Rename locale branch</a></li>
         <li><a href="#discard-changes-on-a-file">Discard changes on a file</a></li>
         <li><a href="#show-all-remotes">Show all remotes</a></li>
         <li><a href="#add-upstream-remote">Add upstream remote</a></li>
@@ -496,6 +492,12 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#remove-locale-branch">#</a>
 </h3>
 <pre tabindex="0"><code>git branch -D my-branch
+</code></pre><h3 id="rename-locale-branch">
+  Rename locale branch
+  <a class="anchor" href="#rename-locale-branch">#</a>
+</h3>
+<p>Switch to branch to rename</p>
+<pre tabindex="0"><code>git branch -m new-branch-name
 </code></pre><h3 id="discard-changes-on-a-file">
   Discard changes on a file
   <a class="anchor" href="#discard-changes-on-a-file">#</a>
@@ -594,9 +596,9 @@ bottom.
   <div class="flex flex-wrap justify-between">
 
 
-  <div><a class="flex align-center" href="https://github.com/francoiducat/francoiducat.github.io.sources/commit/79c7a4b81c5a9c93005244b81d54164e6ddbd7ef" title='Last modified by francoiducat | Feb 5, 2024' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/francoiducat/francoiducat.github.io.sources/commit/bb18fab2e2486098601f9cd9ea6e379969cc157f" title='Last modified by fducat18 | Mar 20, 2025' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="" />
-      <span>Feb 5, 2024</span>
+      <span>Mar 20, 2025</span>
     </a>
   </div>
 
@@ -637,6 +639,7 @@ bottom.
         <li><a href="#refresh-git-repo-after-gitignore-edition">Refresh git repo after .gitignore edition</a></li>
         <li><a href="#remove-remote-branch">Remove remote branch</a></li>
         <li><a href="#remove-locale-branch">Remove locale branch</a></li>
+        <li><a href="#rename-locale-branch">Rename locale branch</a></li>
         <li><a href="#discard-changes-on-a-file">Discard changes on a file</a></li>
         <li><a href="#show-all-remotes">Show all remotes</a></li>
         <li><a href="#add-upstream-remote">Add upstream remote</a></li>
