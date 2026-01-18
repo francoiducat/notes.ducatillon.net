@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Software Licences Explained
+  #
+
+Licenses are responses to historical pressures, not abstract ideologies.
+👉 It&rsquo;s basically choosing a social contract, not a legal detail.
+
+  TLDR
+  #
+
+
+MIT → Freedom without obligations
+Apache 2.0 → Freedom with legal safety
+GPL → Freedom with reciprocity
+
+
+  Licence summary
+  #
+
+
+  
+      
+          License
+          Birthdate
+          Creator / Origin
+          Mental model
+          Commercial use?
+          Closed-source allowed?
+          What must be shared
+          Famous examples
+          Who profits
+      
+  
+  
+      
+          Unlicense
+          ~2010
+          Public domain attempt
+          Do literally anything.
+          ✅ Yes
+          ✅ Yes
+          Nothing
+          —
+          Anyone
+      
+      
+          MIT
+          1988
+          MIT (academia)
+          Take it and run.
+          ✅ Yes
+          ✅ Yes
+          Keep license notice
+          NumPy, Flask, Requests
+          Everyone
+      
+      
+          BSD (2/3-Clause)
+          1988
+          UC Berkeley
+          Open code, no strings.
+          ✅ Yes
+          ✅ Yes
+          Keep copyright notice
+          FreeBSD, OpenSSH
+          Apple, Juniper
+      
+      
+          Apache 2.0
+          2004
+          Apache Software Foundation
+          Open, but legally safe.
+          ✅ Yes
+          ✅ Yes
+          Preserve notices &#43; patent peace
+          Kubernetes, Spark, Kafka
+          Google, Confluent
+      
+      
+          MPL 2.0
+          1998
+          Netscape / Mozilla
+          Open files, closed products.
+          ✅ Yes
+          ⚠️ Except MPL files
+          Modified MPL files
+          Firefox
+          Mozilla
+      
+      
+          LGPL
+          1991
+          Free Software Foundation
+          Share the core, not the app.
+          ✅ Yes
+          ⚠️ App yes, library no
+          Changes to LGPL library
+          glibc, FFmpeg
+          Red Hat, IBM
+      
+      
+          GPL (v2/v3)
+          1989 (v1)
+          Richard Stallman (FSF)
+          Take it, but give back.
+          ✅ Yes
+          ❌ No (if distributed)
+          Full source &#43; same license
+          Linux kernel, WordPress, Git
+          Automattic, Red Hat, Canonical, GitLab
+      
+      
+          AGPL
+          2007
+          FSF &#43; Affero Inc.
+          SaaS must share too.
+          ✅ Yes
+          ❌ No (incl. SaaS)
+          Source, incl. network use
+          Nextcloud, Mastodon
+          Nextcloud GmbH
+      
+      
+          Proprietary
+          —
+          Vendor-defined
+          You rent, not share.
+          ⚠️ Limited
+          ✅ Yes
+          Fees, data, compliance
+          Windows, macOS
+          Microsoft, Apple
+      
+  
+
+
+  How do companies monetize open source?
+  #
+
+Most organizations and individuals make money with open-source software through:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="/docs/opensource/licences/">
+  <meta property="og:site_name" content="FDUCAT Notebook">
+  <meta property="og:title" content="FDUCAT Notebook">
+  <meta property="og:description" content="Software Licences Explained # Licenses are responses to historical pressures, not abstract ideologies. 👉 It’s basically choosing a social contract, not a legal detail.
+TLDR # MIT → Freedom without obligations Apache 2.0 → Freedom with legal safety GPL → Freedom with reciprocity Licence summary # License Birthdate Creator / Origin Mental model Commercial use? Closed-source allowed? What must be shared Famous examples Who profits Unlicense ~2010 Public domain attempt Do literally anything. ✅ Yes ✅ Yes Nothing — Anyone MIT 1988 MIT (academia) Take it and run. ✅ Yes ✅ Yes Keep license notice NumPy, Flask, Requests Everyone BSD (2/3-Clause) 1988 UC Berkeley Open code, no strings. ✅ Yes ✅ Yes Keep copyright notice FreeBSD, OpenSSH Apple, Juniper Apache 2.0 2004 Apache Software Foundation Open, but legally safe. ✅ Yes ✅ Yes Preserve notices &#43; patent peace Kubernetes, Spark, Kafka Google, Confluent MPL 2.0 1998 Netscape / Mozilla Open files, closed products. ✅ Yes ⚠️ Except MPL files Modified MPL files Firefox Mozilla LGPL 1991 Free Software Foundation Share the core, not the app. ✅ Yes ⚠️ App yes, library no Changes to LGPL library glibc, FFmpeg Red Hat, IBM GPL (v2/v3) 1989 (v1) Richard Stallman (FSF) Take it, but give back. ✅ Yes ❌ No (if distributed) Full source &#43; same license Linux kernel, WordPress, Git Automattic, Red Hat, Canonical, GitLab AGPL 2007 FSF &#43; Affero Inc. SaaS must share too. ✅ Yes ❌ No (incl. SaaS) Source, incl. network use Nextcloud, Mastodon Nextcloud GmbH Proprietary — Vendor-defined You rent, not share. ⚠️ Limited ✅ Yes Fees, data, compliance Windows, macOS Microsoft, Apple How do companies monetize open source? # Most organizations and individuals make money with open-source software through:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Licences | FDUCAT Notebook</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="/docs/opensource/licences/">
+<link rel="stylesheet" href="/book.min.3257a7ce7c061eb5dfc72257c356229b1470dc77ce9b982ac220c02542f9f04f.css" >
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.dbabde7e1673297aab0ed736ae54f9eabf6882123d38767849a15371ada4e280.js" ></script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PXY5L88X6W');
+        }
+      </script><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>FDUCAT Notebook</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Devops</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/batch-process-files/" class="">Batch Process Files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-bash-commands/" class="">Day to Day Bash Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-kubernetes-command/" class="">Day to Day Kubernetes Command</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/every-day-git-commands/" class="">Every Day Git Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/pathpath/" class="">Pathpath</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Hugo</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/hugo/exclude-resource-from-page-bundle/" class="">Exclude Resource From Page Bundle</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Java</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/springboot-graphql-client/" class="">Springboot Graphql Client</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Opensource</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/opensource/licences/" class="active">Licences</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/opensource/os_origins/" class="">Os Origins</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Process</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/process/the-virtuous-cycle-of-code-review/" class="">The Virtuous Cycle of Code Review</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Productivity</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/google-spreadsheet-tricks/" class="">Google Spreadsheet Tricks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/mac-screen-record-with-audio/" class="">MAC Screen Record With Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/pdf_to_doc/" class="">Pdf to Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/save-storage-pdf-images-videos/" class="">Save Storage Pdf Images Videos</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Python</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python/poetry/" class="">Poetry</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Web</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/web/embed-pdf-in-html/" class="">Embed Pdf in HTML</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Notes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Licences</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tldr">TLDR</a></li>
+    <li><a href="#licence-summary">Licence summary</a></li>
+    <li><a href="#how-do-companies-monetize-open-source">How do companies monetize open source?</a></li>
+    <li><a href="#how-to-choose-a-license">How to choose a license?</a></li>
+    <li><a href="#license-philosophy-and-intent">License philosophy and intent</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="software-licences-explained">
+  Software Licences Explained
+  <a class="anchor" href="#software-licences-explained">#</a>
+</h1>
+<p>Licenses are responses to historical pressures, not abstract ideologies.
+👉 It&rsquo;s basically choosing a social contract, not a legal detail.</p>
+<h2 id="tldr">
+  TLDR
+  <a class="anchor" href="#tldr">#</a>
+</h2>
+<ul>
+<li><strong>MIT</strong> → <em>Freedom without obligations</em></li>
+<li><strong>Apache 2.0</strong> → <em>Freedom with legal safety</em></li>
+<li><strong>GPL</strong> → <em>Freedom with reciprocity</em></li>
+</ul>
+<h2 id="licence-summary">
+  Licence summary
+  <a class="anchor" href="#licence-summary">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>License</th>
+          <th>Birthdate</th>
+          <th>Creator / Origin</th>
+          <th>Mental model</th>
+          <th>Commercial use?</th>
+          <th>Closed-source allowed?</th>
+          <th>What must be shared</th>
+          <th>Famous examples</th>
+          <th>Who profits</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Unlicense</strong></td>
+          <td>~2010</td>
+          <td>Public domain attempt</td>
+          <td><em>Do literally anything.</em></td>
+          <td>✅ Yes</td>
+          <td>✅ Yes</td>
+          <td>Nothing</td>
+          <td>—</td>
+          <td>Anyone</td>
+      </tr>
+      <tr>
+          <td><strong>MIT</strong></td>
+          <td>1988</td>
+          <td>MIT (academia)</td>
+          <td><em>Take it and run.</em></td>
+          <td>✅ Yes</td>
+          <td>✅ Yes</td>
+          <td>Keep license notice</td>
+          <td>NumPy, Flask, Requests</td>
+          <td>Everyone</td>
+      </tr>
+      <tr>
+          <td><strong>BSD (2/3-Clause)</strong></td>
+          <td>1988</td>
+          <td>UC Berkeley</td>
+          <td><em>Open code, no strings.</em></td>
+          <td>✅ Yes</td>
+          <td>✅ Yes</td>
+          <td>Keep copyright notice</td>
+          <td>FreeBSD, OpenSSH</td>
+          <td>Apple, Juniper</td>
+      </tr>
+      <tr>
+          <td><strong>Apache 2.0</strong></td>
+          <td>2004</td>
+          <td>Apache Software Foundation</td>
+          <td><em>Open, but legally safe.</em></td>
+          <td>✅ Yes</td>
+          <td>✅ Yes</td>
+          <td>Preserve notices + patent peace</td>
+          <td>Kubernetes, Spark, Kafka</td>
+          <td>Google, Confluent</td>
+      </tr>
+      <tr>
+          <td><strong>MPL 2.0</strong></td>
+          <td>1998</td>
+          <td>Netscape / Mozilla</td>
+          <td><em>Open files, closed products.</em></td>
+          <td>✅ Yes</td>
+          <td>⚠️ Except MPL files</td>
+          <td>Modified MPL files</td>
+          <td>Firefox</td>
+          <td>Mozilla</td>
+      </tr>
+      <tr>
+          <td><strong>LGPL</strong></td>
+          <td>1991</td>
+          <td>Free Software Foundation</td>
+          <td><em>Share the core, not the app.</em></td>
+          <td>✅ Yes</td>
+          <td>⚠️ App yes, library no</td>
+          <td>Changes to LGPL library</td>
+          <td>glibc, FFmpeg</td>
+          <td>Red Hat, IBM</td>
+      </tr>
+      <tr>
+          <td><strong>GPL (v2/v3)</strong></td>
+          <td>1989 (v1)</td>
+          <td>Richard Stallman (FSF)</td>
+          <td><em>Take it, but give back.</em></td>
+          <td>✅ Yes</td>
+          <td>❌ No (if distributed)</td>
+          <td>Full source + same license</td>
+          <td>Linux kernel, WordPress, Git</td>
+          <td>Automattic, Red Hat, Canonical, GitLab</td>
+      </tr>
+      <tr>
+          <td><strong>AGPL</strong></td>
+          <td>2007</td>
+          <td>FSF + Affero Inc.</td>
+          <td><em>SaaS must share too.</em></td>
+          <td>✅ Yes</td>
+          <td>❌ No (incl. SaaS)</td>
+          <td>Source, incl. network use</td>
+          <td>Nextcloud, Mastodon</td>
+          <td>Nextcloud GmbH</td>
+      </tr>
+      <tr>
+          <td><strong>Proprietary</strong></td>
+          <td>—</td>
+          <td>Vendor-defined</td>
+          <td><em>You rent, not share.</em></td>
+          <td>⚠️ Limited</td>
+          <td>✅ Yes</td>
+          <td>Fees, data, compliance</td>
+          <td>Windows, macOS</td>
+          <td>Microsoft, Apple</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="how-do-companies-monetize-open-source">
+  How do companies monetize open source?
+  <a class="anchor" href="#how-do-companies-monetize-open-source">#</a>
+</h2>
+<p>Most organizations and individuals make money with open-source software through:</p>
+<ul>
+<li>Hosting, support, subscriptions, enterprise services, and trademarks (GPL, AGPL, LGPL)</li>
+<li>Cloud services and managed platforms (Apache 2.0, BSD, MIT)</li>
+<li>Support, dual licensing, enterprise contracts (LGPL)</li>
+<li>Products, hardware, internal use (BSD)</li>
+<li>Licenses, subscriptions, lock-in (Proprietary)</li>
+</ul>
+<p>The monetization model is often similar across licenses, focusing on added value, services, or proprietary extensions rather than direct software sales.</p>
+<h2 id="how-to-choose-a-license">
+  How to choose a license?
+  <a class="anchor" href="#how-to-choose-a-license">#</a>
+</h2>
+<p>Ask yourself <strong>one simple question first</strong>:</p>
+<blockquote>
+<p>❓ <em>Am I okay with someone taking my code, improving it, and never contributing back?</em></p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Yes</strong> → choose <strong>MIT</strong><br>
+<em>Maximum adoption, zero friction. Your code can go anywhere.</em></p>
+</li>
+<li>
+<p><strong>Yes, but I want legal &amp; patent safety</strong> → choose <strong>Apache 2.0</strong><br>
+<em>Same freedom as MIT, with stronger protections for companies.</em></p>
+</li>
+<li>
+<p><strong>No</strong> → choose <strong>GPL</strong><br>
+<em>You allow commercial use, but improvements must stay open.</em></p>
+</li>
+</ul>
+<p>There is no “best” license — only a license that matches <strong>your values and goals</strong>.</p>
+<h2 id="license-philosophy-and-intent">
+  License philosophy and intent
+  <a class="anchor" href="#license-philosophy-and-intent">#</a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th>License</th>
+          <th>Philosophy</th>
+          <th>Intent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>GPL (v2/v3)</strong></td>
+          <td>Strong copyleft / reciprocity</td>
+          <td>Ensure that all distributed modifications remain open-source under the same license, protecting user freedoms and preventing private capture of community code.</td>
+      </tr>
+      <tr>
+          <td><strong>Apache 2.0</strong></td>
+          <td>Permissive with legal safety</td>
+          <td>Promote broad collaboration and commercial adoption while providing explicit patent protections and requiring preservation of notices.</td>
+      </tr>
+      <tr>
+          <td><strong>MIT</strong></td>
+          <td>Ultra-permissive</td>
+          <td>Maximize reuse and adoption by imposing minimal restrictions, allowing selling, re-licensing, and closed-source derivatives.</td>
+      </tr>
+      <tr>
+          <td><strong>LGPL</strong></td>
+          <td>Weak copyleft (library-focused)</td>
+          <td>Allow proprietary applications to link against open libraries while ensuring improvements to the library itself remain open.</td>
+      </tr>
+      <tr>
+          <td><strong>AGPL</strong></td>
+          <td>Network copyleft</td>
+          <td>Close the SaaS loophole by requiring source code disclosure to users who interact with the software over a network.</td>
+      </tr>
+      <tr>
+          <td><strong>BSD (2/3-Clause)</strong></td>
+          <td>Permissive and business-friendly</td>
+          <td>Enable nearly unrestricted use, including proprietary and commercial use, as long as copyright notices are retained.</td>
+      </tr>
+      <tr>
+          <td><strong>MPL 2.0</strong></td>
+          <td>File-level copyleft</td>
+          <td>Require sharing of modified MPL-licensed files while allowing combination with proprietary code in larger systems.</td>
+      </tr>
+      <tr>
+          <td><strong>Unlicense / Public Domain</strong></td>
+          <td>No philosophy enforced</td>
+          <td>Remove all restrictions entirely, placing the code effectively in the public domain for unrestricted reuse.</td>
+      </tr>
+  </tbody>
+</table>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tldr">TLDR</a></li>
+    <li><a href="#licence-summary">Licence summary</a></li>
+    <li><a href="#how-do-companies-monetize-open-source">How do companies monetize open source?</a></li>
+    <li><a href="#how-to-choose-a-license">How to choose a license?</a></li>
+    <li><a href="#license-philosophy-and-intent">License philosophy and intent</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  Poetry commands
+  #
+
+
+  Init poetry
+  #
+
+poetry init
+poetry env remove --all
+poetry install
+
+  Tables
+  #
+
+poetry run python - &lt;&lt; &#39;EOF&#39;                                  
+from app.adapters.outgoing.database.database import Base
+print(Base.metadata.tables)
+EOF
+
+  DB Config url
+  #
+
+poetry run python - &lt;&lt; &#39;EOF&#39;
+from decouple import config
+print(&#34;DATABASE_URL =&#34;, config(&#34;DATABASE_URL&#34;))
+EOF
+
+  Alembic
+  #
+
+poetry run alembic revision --autogenerate -m &#34;initial schema&#34;
+poetry run alembic upgrade head
+poetry run alembic current
+
+  Displays Tables
+  #
+
+poetry run python -c &#34;from app.adapters.outgoing.database.database import Base; print(Base.metadata.tables.keys())&#34;
+&ndash;dict_keys([&lsquo;assets&rsquo;, &lsquo;asset_types&rsquo;, &lsquo;sessions&rsquo;])">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="/docs/python/poetry/">
+  <meta property="og:site_name" content="FDUCAT Notebook">
+  <meta property="og:title" content="FDUCAT Notebook">
+  <meta property="og:description" content="Poetry commands # Init poetry # poetry init poetry env remove --all poetry install Tables # poetry run python - &lt;&lt; &#39;EOF&#39; from app.adapters.outgoing.database.database import Base print(Base.metadata.tables) EOF DB Config url # poetry run python - &lt;&lt; &#39;EOF&#39; from decouple import config print(&#34;DATABASE_URL =&#34;, config(&#34;DATABASE_URL&#34;)) EOF Alembic # poetry run alembic revision --autogenerate -m &#34;initial schema&#34; poetry run alembic upgrade head poetry run alembic current Displays Tables # poetry run python -c &#34;from app.adapters.outgoing.database.database import Base; print(Base.metadata.tables.keys())&#34; –dict_keys([‘assets’, ‘asset_types’, ‘sessions’])">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Poetry | FDUCAT Notebook</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="/docs/python/poetry/">
+<link rel="stylesheet" href="/book.min.3257a7ce7c061eb5dfc72257c356229b1470dc77ce9b982ac220c02542f9f04f.css" >
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.dbabde7e1673297aab0ed736ae54f9eabf6882123d38767849a15371ada4e280.js" ></script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PXY5L88X6W');
+        }
+      </script><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>FDUCAT Notebook</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Devops</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/batch-process-files/" class="">Batch Process Files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-bash-commands/" class="">Day to Day Bash Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-kubernetes-command/" class="">Day to Day Kubernetes Command</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/every-day-git-commands/" class="">Every Day Git Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/pathpath/" class="">Pathpath</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Hugo</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/hugo/exclude-resource-from-page-bundle/" class="">Exclude Resource From Page Bundle</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Java</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/springboot-graphql-client/" class="">Springboot Graphql Client</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Opensource</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/opensource/licences/" class="">Licences</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/opensource/os_origins/" class="">Os Origins</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Process</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/process/the-virtuous-cycle-of-code-review/" class="">The Virtuous Cycle of Code Review</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Productivity</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/google-spreadsheet-tricks/" class="">Google Spreadsheet Tricks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/mac-screen-record-with-audio/" class="">MAC Screen Record With Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/pdf_to_doc/" class="">Pdf to Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/save-storage-pdf-images-videos/" class="">Save Storage Pdf Images Videos</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Python</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python/poetry/" class="active">Poetry</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Web</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/web/embed-pdf-in-html/" class="">Embed Pdf in HTML</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Notes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Poetry</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#init-poetry">Init poetry</a></li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#db-config-url">DB Config url</a></li>
+    <li><a href="#alembic">Alembic</a></li>
+    <li><a href="#displays-tables">Displays Tables</a></li>
+    <li><a href="#run-app">Run app</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="poetry-commands">
+  Poetry commands
+  <a class="anchor" href="#poetry-commands">#</a>
+</h1>
+<h2 id="init-poetry">
+  Init poetry
+  <a class="anchor" href="#init-poetry">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry init
+</span></span><span style="display:flex;"><span>poetry env remove --all
+</span></span><span style="display:flex;"><span>poetry install
+</span></span></code></pre></div><h2 id="tables">
+  Tables
+  <a class="anchor" href="#tables">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry run python - <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;                                  
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">from app.adapters.outgoing.database.database import Base
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">print(Base.metadata.tables)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h2 id="db-config-url">
+  DB Config url
+  <a class="anchor" href="#db-config-url">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry run python - <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">from decouple import config
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">print(&#34;DATABASE_URL =&#34;, config(&#34;DATABASE_URL&#34;))
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">EOF</span>
+</span></span></code></pre></div><h2 id="alembic">
+  Alembic
+  <a class="anchor" href="#alembic">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry run alembic revision --autogenerate -m <span style="color:#e6db74">&#34;initial schema&#34;</span>
+</span></span><span style="display:flex;"><span>poetry run alembic upgrade head
+</span></span><span style="display:flex;"><span>poetry run alembic current
+</span></span></code></pre></div><h2 id="displays-tables">
+  Displays Tables
+  <a class="anchor" href="#displays-tables">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry run python -c <span style="color:#e6db74">&#34;from app.adapters.outgoing.database.database import Base; print(Base.metadata.tables.keys())&#34;</span>
+</span></span></code></pre></div><p>&ndash;dict_keys([&lsquo;assets&rsquo;, &lsquo;asset_types&rsquo;, &lsquo;sessions&rsquo;])</p>
+<h2 id="run-app">
+  Run app
+  <a class="anchor" href="#run-app">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>poetry run uvicorn app.main:app --reload
+</span></span></code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#init-poetry">Init poetry</a></li>
+    <li><a href="#tables">Tables</a></li>
+    <li><a href="#db-config-url">DB Config url</a></li>
+    <li><a href="#alembic">Alembic</a></li>
+    <li><a href="#displays-tables">Displays Tables</a></li>
+    <li><a href="#run-app">Run app</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

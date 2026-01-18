@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  OS Origins
+  #
+
+Where did Linux / Windows / macOS come from?
+A concise overview of how modern operating systems evolved — from early UNIX systems to Linux distributions, Windows NT, macOS, Android, and Chrome OS.
+
+💡Tip💡
+👉Zoom in anywhere on the graph
+
+
+
+
+
+  
+
+
+
+
+
+graph TB
+
+%% ========= USAGE COLOR DEFINITIONS =========
+classDef desktop fill:#E8EEF3,stroke:#777;
+classDef server fill:#F3EFEA,stroke:#777;
+classDef hybrid fill:#E9F1EC,stroke:#777;
+
+%% ========= LEGEND =========
+subgraph LEGEND[&#34;Legend&#34;]
+    direction TB
+    D1[Desktop / User-facing]:::desktop
+    D2[Server / Infrastructure]:::server
+    D3[Hybrid usage]:::hybrid
+    D4[Solid arrow → Direct code lineage]
+    D5[Dashed arrow → Influence / POSIX / UNIX-like]
+end
+
+%% ========= EARLY SYSTEMS =========
+subgraph EARLY[&#34;Early Systems&#34;]
+    direction TB
+    CP[CP/M1974Gary Kildall]:::server
+    DOS[MS-DOS1981Microsoft]:::desktop
+    CP --&gt; DOS
+end
+
+%% ========= UNIX ROOT =========
+subgraph UNIX[&#34;UNIX Family&#34;]
+    direction TB
+    U[UNIX1969Bell Labs]:::server
+    BSD[BSD Unix1977Berkeley]:::server
+    SYSV[System V1983AT&T]:::server
+    U --&gt; BSD
+    U --&gt; SYSV
+end
+
+%% ========= BSD DERIVATIVES =========
+subgraph BSD_SYS[&#34;BSD-derived Systems&#34;]
+    direction TB
+    DARWIN[Darwin / XNU2000Apple]:::hybrid
+    MAC[macOS2001]:::desktop
+    IOS[iOS / iPadOS2007]:::desktop
+    BSDOS[FreeBSD / OpenBSD / NetBSD1993–1996]:::server
+    BSD --&gt; DARWIN
+    DARWIN --&gt; MAC
+    DARWIN --&gt; IOS
+    BSD --&gt; BSDOS
+end
+
+%% ========= CLASSIC MAC =========
+CLASSIC[Classic Mac OS1984Apple]:::desktop
+CLASSIC -.-&gt; MAC
+
+%% ========= MINIX =========
+MINIX[MINIX1987Andrew S. Tanenbaum]:::server
+
+%% ========= LINUX KERNEL =========
+subgraph LINUX[&#34;Linux Kernel&#34;]
+    direction TB
+    LINUXK[Linux Kernel1991Linus Torvalds]:::server
+end
+
+%% ========= LINUX DISTRIBUTIONS CALLOUT =========
+subgraph LINUXDIST[&#34;Linux Distributions&#34;]
+    direction TB
+    NOTE[Linux is a kernel.Distributions combine it withuserland, package managers,and policies.]:::hybrid
+end
+LINUXK --&gt; NOTE
+
+%% ========= EARLY LINUX DISTROS =========
+subgraph EARLYDIST[&#34;Early Linux Distributions&#34;]
+    direction TB
+    SLACK[Slackware1993]:::server
+    DEB[Debian1993]:::server
+    RH[Red Hat Linux1994]:::server
+    LINUXK --&gt; SLACK
+    LINUXK --&gt; DEB
+    LINUXK --&gt; RH
+end
+
+%% ========= DEBIAN FAMILY =========
+subgraph DEBFAM[&#34;Debian Family&#34;]
+    direction TB
+    UB[Ubuntu2004Canonical]:::hybrid
+    MINT[Linux Mint2006]:::desktop
+    KALI[Kali Linux2013]:::server
+    DEB --&gt; UB
+    UB --&gt; MINT
+    DEB --&gt; KALI
+end
+
+%% ========= RED HAT FAMILY =========
+subgraph RHF[&#34;Red Hat Family&#34;]
+    direction TB
+    FED[Fedora2003]:::hybrid
+    RHEL[RHEL2002]:::server
+    CLONES[RHEL ClonesCentOS / Alma / Rocky2004–2021]:::server
+    RH --&gt; FED --&gt; RHEL --&gt; CLONES
+end
+
+%% ========= INDEPENDENT DISTROS =========
+subgraph INDEP[&#34;Independent Linux Distributions&#34;]
+    direction TB
+    ARCH[Arch Linux2002]:::hybrid
+    GENTOO[Gentoo2002]:::hybrid
+    LINUXK --&gt; ARCH
+    LINUXK --&gt; GENTOO
+end
+
+%% ========= MOBILE / SPECIALIZED =========
+subgraph MOBILE[&#34;Mobile / Specialized Linux&#34;]
+    direction TB
+    AND[Android2008Google]:::desktop
+    CHROMIUM[Chromium OS2009]:::hybrid
+    CHROME[Chrome OS2011]:::desktop
+    LINUXK --&gt; AND
+    LINUXK --&gt; CHROMIUM --&gt; CHROME
+end
+
+%% ========= WINDOWS =========
+subgraph WINDOWS[&#34;Windows NT Family&#34;]
+    direction TB
+    NT[Windows NT1993]:::server
+    W2K[Windows 2000 / XP2000–2001]:::hybrid
+    W7[Windows 72009]:::hybrid
+    W10[Windows 10 / 112015–2021]:::desktop
+    NT --&gt; W2K --&gt; W7 --&gt; W10
+end
+
+%% ========= INFLUENCE LINKS =========
+U -.-&gt;|POSIX / UNIX concepts| LINUXK
+MINIX -.-&gt;|UNIX-like| LINUXK
+DOS --&gt; NT
+
+%% ========= SUBGRAPH STYLING =========
+style UNIX fill:#FBF2EA,stroke:#B85C38,stroke-width:2.5px
+style BSD_SYS fill:#EEF3F8,stroke:#4A6FA5,stroke-width:2.5px
+style LINUX fill:#F6F1E7,stroke:#9C8A4D,stroke-width:2.5px
+style EARLYDIST fill:#EDF4EF,stroke:#5C8A72,stroke-width:2px
+style DEBFAM fill:#EAF3F1,stroke:#4F8F8B,stroke-width:2px
+style RHF fill:#F4EEE9,stroke:#9A6B4F,stroke-width:2px
+style INDEP fill:#F1F3F3,stroke:#6B7280,stroke-width:2px
+style MOBILE fill:#FAF0EB,stroke:#C97C5D,stroke-width:2px
+style WINDOWS fill:#EEF2F7,stroke:#3A5F8C,stroke-width:2.5px
+style EARLY fill:#F4F4F2,stroke:#7A7A7A,stroke-width:2px
+style LEGEND fill:#F6F6F6,stroke:#999,stroke-width:1.8px
+style LINUXDIST fill:#EDF2F7,stroke:#5A6F8E,stroke-width:2px
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="/docs/opensource/os_origins/">
+  <meta property="og:site_name" content="FDUCAT Notebook">
+  <meta property="og:title" content="FDUCAT Notebook">
+  <meta property="og:description" content="OS Origins # Where did Linux / Windows / macOS come from?
+A concise overview of how modern operating systems evolved — from early UNIX systems to Linux distributions, Windows NT, macOS, Android, and Chrome OS.
+💡Tip💡
+👉Zoom in anywhere on the graph
+graph TB %% ========= USAGE COLOR DEFINITIONS ========= classDef desktop fill:#E8EEF3,stroke:#777; classDef server fill:#F3EFEA,stroke:#777; classDef hybrid fill:#E9F1EC,stroke:#777; %% ========= LEGEND ========= subgraph LEGEND[&#34;Legend&#34;] direction TB D1[Desktop / User-facing]:::desktop D2[Server / Infrastructure]:::server D3[Hybrid usage]:::hybrid D4[Solid arrow → Direct code lineage] D5[Dashed arrow → Influence / POSIX / UNIX-like] end %% ========= EARLY SYSTEMS ========= subgraph EARLY[&#34;Early Systems&#34;] direction TB CP[CP/M1974Gary Kildall]:::server DOS[MS-DOS1981Microsoft]:::desktop CP --&gt; DOS end %% ========= UNIX ROOT ========= subgraph UNIX[&#34;UNIX Family&#34;] direction TB U[UNIX1969Bell Labs]:::server BSD[BSD Unix1977Berkeley]:::server SYSV[System V1983AT&amp;T]:::server U --&gt; BSD U --&gt; SYSV end %% ========= BSD DERIVATIVES ========= subgraph BSD_SYS[&#34;BSD-derived Systems&#34;] direction TB DARWIN[Darwin / XNU2000Apple]:::hybrid MAC[macOS2001]:::desktop IOS[iOS / iPadOS2007]:::desktop BSDOS[FreeBSD / OpenBSD / NetBSD1993–1996]:::server BSD --&gt; DARWIN DARWIN --&gt; MAC DARWIN --&gt; IOS BSD --&gt; BSDOS end %% ========= CLASSIC MAC ========= CLASSIC[Classic Mac OS1984Apple]:::desktop CLASSIC -.-&gt; MAC %% ========= MINIX ========= MINIX[MINIX1987Andrew S. Tanenbaum]:::server %% ========= LINUX KERNEL ========= subgraph LINUX[&#34;Linux Kernel&#34;] direction TB LINUXK[Linux Kernel1991Linus Torvalds]:::server end %% ========= LINUX DISTRIBUTIONS CALLOUT ========= subgraph LINUXDIST[&#34;Linux Distributions&#34;] direction TB NOTE[Linux is a kernel.Distributions combine it withuserland, package managers,and policies.]:::hybrid end LINUXK --&gt; NOTE %% ========= EARLY LINUX DISTROS ========= subgraph EARLYDIST[&#34;Early Linux Distributions&#34;] direction TB SLACK[Slackware1993]:::server DEB[Debian1993]:::server RH[Red Hat Linux1994]:::server LINUXK --&gt; SLACK LINUXK --&gt; DEB LINUXK --&gt; RH end %% ========= DEBIAN FAMILY ========= subgraph DEBFAM[&#34;Debian Family&#34;] direction TB UB[Ubuntu2004Canonical]:::hybrid MINT[Linux Mint2006]:::desktop KALI[Kali Linux2013]:::server DEB --&gt; UB UB --&gt; MINT DEB --&gt; KALI end %% ========= RED HAT FAMILY ========= subgraph RHF[&#34;Red Hat Family&#34;] direction TB FED[Fedora2003]:::hybrid RHEL[RHEL2002]:::server CLONES[RHEL ClonesCentOS / Alma / Rocky2004–2021]:::server RH --&gt; FED --&gt; RHEL --&gt; CLONES end %% ========= INDEPENDENT DISTROS ========= subgraph INDEP[&#34;Independent Linux Distributions&#34;] direction TB ARCH[Arch Linux2002]:::hybrid GENTOO[Gentoo2002]:::hybrid LINUXK --&gt; ARCH LINUXK --&gt; GENTOO end %% ========= MOBILE / SPECIALIZED ========= subgraph MOBILE[&#34;Mobile / Specialized Linux&#34;] direction TB AND[Android2008Google]:::desktop CHROMIUM[Chromium OS2009]:::hybrid CHROME[Chrome OS2011]:::desktop LINUXK --&gt; AND LINUXK --&gt; CHROMIUM --&gt; CHROME end %% ========= WINDOWS ========= subgraph WINDOWS[&#34;Windows NT Family&#34;] direction TB NT[Windows NT1993]:::server W2K[Windows 2000 / XP2000–2001]:::hybrid W7[Windows 72009]:::hybrid W10[Windows 10 / 112015–2021]:::desktop NT --&gt; W2K --&gt; W7 --&gt; W10 end %% ========= INFLUENCE LINKS ========= U -.-&gt;|POSIX / UNIX concepts| LINUXK MINIX -.-&gt;|UNIX-like| LINUXK DOS --&gt; NT %% ========= SUBGRAPH STYLING ========= style UNIX fill:#FBF2EA,stroke:#B85C38,stroke-width:2.5px style BSD_SYS fill:#EEF3F8,stroke:#4A6FA5,stroke-width:2.5px style LINUX fill:#F6F1E7,stroke:#9C8A4D,stroke-width:2.5px style EARLYDIST fill:#EDF4EF,stroke:#5C8A72,stroke-width:2px style DEBFAM fill:#EAF3F1,stroke:#4F8F8B,stroke-width:2px style RHF fill:#F4EEE9,stroke:#9A6B4F,stroke-width:2px style INDEP fill:#F1F3F3,stroke:#6B7280,stroke-width:2px style MOBILE fill:#FAF0EB,stroke:#C97C5D,stroke-width:2px style WINDOWS fill:#EEF2F7,stroke:#3A5F8C,stroke-width:2.5px style EARLY fill:#F4F4F2,stroke:#7A7A7A,stroke-width:2px style LEGEND fill:#F6F6F6,stroke:#999,stroke-width:1.8px style LINUXDIST fill:#EDF2F7,stroke:#5A6F8E,stroke-width:2px">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+<title>Os Origins | FDUCAT Notebook</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="/docs/opensource/os_origins/">
+<link rel="stylesheet" href="/book.min.3257a7ce7c061eb5dfc72257c356229b1470dc77ce9b982ac220c02542f9f04f.css" >
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.dbabde7e1673297aab0ed736ae54f9eabf6882123d38767849a15371ada4e280.js" ></script>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PXY5L88X6W"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PXY5L88X6W');
+        }
+      </script><!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>FDUCAT Notebook</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Devops</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/batch-process-files/" class="">Batch Process Files</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-bash-commands/" class="">Day to Day Bash Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/day-to-day-kubernetes-command/" class="">Day to Day Kubernetes Command</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/every-day-git-commands/" class="">Every Day Git Commands</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/devops/pathpath/" class="">Pathpath</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Hugo</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/hugo/exclude-resource-from-page-bundle/" class="">Exclude Resource From Page Bundle</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Java</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/java/springboot-graphql-client/" class="">Springboot Graphql Client</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Opensource</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/opensource/licences/" class="">Licences</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/opensource/os_origins/" class="active">Os Origins</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Process</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/process/the-virtuous-cycle-of-code-review/" class="">The Virtuous Cycle of Code Review</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Productivity</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/google-spreadsheet-tricks/" class="">Google Spreadsheet Tricks</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/mac-screen-record-with-audio/" class="">MAC Screen Record With Audio</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/pdf_to_doc/" class="">Pdf to Doc</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/productivity/save-storage-pdf-images-videos/" class="">Save Storage Pdf Images Videos</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Python</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/python/poetry/" class="">Poetry</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Web</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/web/embed-pdf-in-html/" class="">Embed Pdf in HTML</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/"  >
+        Notes
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Os Origins</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown book-article"><h1 id="os-origins">
+  OS Origins
+  <a class="anchor" href="#os-origins">#</a>
+</h1>
+<p><em>Where did Linux / Windows / macOS come from?</em></p>
+<p>A concise overview of how modern operating systems evolved — from early UNIX systems to Linux distributions, Windows NT, macOS, Android, and Chrome OS.</p>
+<blockquote class="book-hint info">
+<p><strong>💡Tip💡</strong><br>
+👉Zoom in anywhere on the graph</p>
+</blockquote>
+
+
+<script src="/mermaid.min.js"></script>
+
+  <script>mermaid.initialize({
+  "flowchart": {
+    "useMaxWidth":true
+  },
+  "theme": "default"
+}
+)</script>
+
+
+
+
+<pre class="mermaid">
+graph TB
+
+%% ========= USAGE COLOR DEFINITIONS =========
+classDef desktop fill:#E8EEF3,stroke:#777;
+classDef server fill:#F3EFEA,stroke:#777;
+classDef hybrid fill:#E9F1EC,stroke:#777;
+
+%% ========= LEGEND =========
+subgraph LEGEND["Legend"]
+    direction TB
+    D1[Desktop / User-facing]:::desktop
+    D2[Server / Infrastructure]:::server
+    D3[Hybrid usage]:::hybrid
+    D4[Solid arrow → Direct code lineage]
+    D5[Dashed arrow → Influence / POSIX / UNIX-like]
+end
+
+%% ========= EARLY SYSTEMS =========
+subgraph EARLY["Early Systems"]
+    direction TB
+    CP[CP/M<br/>1974<br/>Gary Kildall]:::server
+    DOS[MS-DOS<br/>1981<br/>Microsoft]:::desktop
+    CP --> DOS
+end
+
+%% ========= UNIX ROOT =========
+subgraph UNIX["UNIX Family"]
+    direction TB
+    U[UNIX<br/>1969<br/>Bell Labs]:::server
+    BSD[BSD Unix<br/>1977<br/>Berkeley]:::server
+    SYSV[System V<br/>1983<br/>AT&T]:::server
+    U --> BSD
+    U --> SYSV
+end
+
+%% ========= BSD DERIVATIVES =========
+subgraph BSD_SYS["BSD-derived Systems"]
+    direction TB
+    DARWIN[Darwin / XNU<br/>2000<br/>Apple]:::hybrid
+    MAC[macOS<br/>2001]:::desktop
+    IOS[iOS / iPadOS<br/>2007]:::desktop
+    BSDOS[FreeBSD / OpenBSD / NetBSD<br/>1993–1996]:::server
+    BSD --> DARWIN
+    DARWIN --> MAC
+    DARWIN --> IOS
+    BSD --> BSDOS
+end
+
+%% ========= CLASSIC MAC =========
+CLASSIC[Classic Mac OS<br/>1984<br/>Apple]:::desktop
+CLASSIC -.-> MAC
+
+%% ========= MINIX =========
+MINIX[MINIX<br/>1987<br/>Andrew S. Tanenbaum]:::server
+
+%% ========= LINUX KERNEL =========
+subgraph LINUX["Linux Kernel"]
+    direction TB
+    LINUXK[Linux Kernel<br/>1991<br/>Linus Torvalds]:::server
+end
+
+%% ========= LINUX DISTRIBUTIONS CALLOUT =========
+subgraph LINUXDIST["Linux Distributions"]
+    direction TB
+    NOTE[Linux is a kernel.<br/>Distributions combine it with<br/>userland, package managers,<br/>and policies.]:::hybrid
+end
+LINUXK --> NOTE
+
+%% ========= EARLY LINUX DISTROS =========
+subgraph EARLYDIST["Early Linux Distributions"]
+    direction TB
+    SLACK[Slackware<br/>1993]:::server
+    DEB[Debian<br/>1993]:::server
+    RH[Red Hat Linux<br/>1994]:::server
+    LINUXK --> SLACK
+    LINUXK --> DEB
+    LINUXK --> RH
+end
+
+%% ========= DEBIAN FAMILY =========
+subgraph DEBFAM["Debian Family"]
+    direction TB
+    UB[Ubuntu<br/>2004<br/>Canonical]:::hybrid
+    MINT[Linux Mint<br/>2006]:::desktop
+    KALI[Kali Linux<br/>2013]:::server
+    DEB --> UB
+    UB --> MINT
+    DEB --> KALI
+end
+
+%% ========= RED HAT FAMILY =========
+subgraph RHF["Red Hat Family"]
+    direction TB
+    FED[Fedora<br/>2003]:::hybrid
+    RHEL[RHEL<br/>2002]:::server
+    CLONES[RHEL Clones<br/>CentOS / Alma / Rocky<br/>2004–2021]:::server
+    RH --> FED --> RHEL --> CLONES
+end
+
+%% ========= INDEPENDENT DISTROS =========
+subgraph INDEP["Independent Linux Distributions"]
+    direction TB
+    ARCH[Arch Linux<br/>2002]:::hybrid
+    GENTOO[Gentoo<br/>2002]:::hybrid
+    LINUXK --> ARCH
+    LINUXK --> GENTOO
+end
+
+%% ========= MOBILE / SPECIALIZED =========
+subgraph MOBILE["Mobile / Specialized Linux"]
+    direction TB
+    AND[Android<br/>2008<br/>Google]:::desktop
+    CHROMIUM[Chromium OS<br/>2009]:::hybrid
+    CHROME[Chrome OS<br/>2011]:::desktop
+    LINUXK --> AND
+    LINUXK --> CHROMIUM --> CHROME
+end
+
+%% ========= WINDOWS =========
+subgraph WINDOWS["Windows NT Family"]
+    direction TB
+    NT[Windows NT<br/>1993]:::server
+    W2K[Windows 2000 / XP<br/>2000–2001]:::hybrid
+    W7[Windows 7<br/>2009]:::hybrid
+    W10[Windows 10 / 11<br/>2015–2021]:::desktop
+    NT --> W2K --> W7 --> W10
+end
+
+%% ========= INFLUENCE LINKS =========
+U -.->|POSIX / UNIX concepts| LINUXK
+MINIX -.->|UNIX-like| LINUXK
+DOS --> NT
+
+%% ========= SUBGRAPH STYLING =========
+style UNIX fill:#FBF2EA,stroke:#B85C38,stroke-width:2.5px
+style BSD_SYS fill:#EEF3F8,stroke:#4A6FA5,stroke-width:2.5px
+style LINUX fill:#F6F1E7,stroke:#9C8A4D,stroke-width:2.5px
+style EARLYDIST fill:#EDF4EF,stroke:#5C8A72,stroke-width:2px
+style DEBFAM fill:#EAF3F1,stroke:#4F8F8B,stroke-width:2px
+style RHF fill:#F4EEE9,stroke:#9A6B4F,stroke-width:2px
+style INDEP fill:#F1F3F3,stroke:#6B7280,stroke-width:2px
+style MOBILE fill:#FAF0EB,stroke:#C97C5D,stroke-width:2px
+style WINDOWS fill:#EEF2F7,stroke:#3A5F8C,stroke-width:2.5px
+style EARLY fill:#F4F4F2,stroke:#7A7A7A,stroke-width:2px
+style LEGEND fill:#F6F6F6,stroke:#999,stroke-width:1.8px
+style LINUXDIST fill:#EDF2F7,stroke:#5A6F8E,stroke-width:2px
+</pre>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
