@@ -132,7 +132,7 @@ Great alternative in a shortcut to search in your terminal history:
 - `:echo line('$')` : Permet d'afficher le nombre de lignes du fichier en question.
 - `vim -es -c ":g/\[yolo/d" -c ":wq" file.md` : Removes all lines containing `\[yolo` in `file.md` 
 - `vim -es -c "%s/roger/jane/g" -c ":wq" file.md` : Replace `roger` with `jane` in `file.md` 
-
+- `tree -L 2 .` : show tree view of directory/files
 
 ## Network commands
 
