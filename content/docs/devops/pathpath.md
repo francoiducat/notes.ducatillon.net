@@ -150,12 +150,14 @@ Shell searches in PATH order for a file named "python3":
 
 From `.zshrc`
 
-```
+```bash
 # Switch to 3.9.6
 export PATH="/usr/bin:$PATH"
 source ~/.zshrc
 python3 --version  # 3.9.6
+```
 
+```bash
 # Switch to 3.12
 export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
 source ~/.zshrc
