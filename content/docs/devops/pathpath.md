@@ -1,4 +1,4 @@
-# PATH variable
+# PATH variable explained
 
 ## The `$PATH` variable
 
