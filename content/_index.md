@@ -49,7 +49,7 @@ A `sandbox` project built with **Python FastAPI**, **React**, and **Hexagonal Ar
 
 <--->
 
-### [🌤️ Hugo Air Theme](https://francoiducat.github.io/hugo-air-demo/)
+### [🌤️ Hugo Air Theme](https://themes.gohugo.io/themes/hugo-air/)
 **Open Source Contribution**
 <br>
 A clean, minimal, and responsive theme created for the Hugo Static Site Generator.
