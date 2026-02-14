@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>François Ducatillon - Senior Tech Lead</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #2c3e50; 
+            --accent: #2980b9;
+            --text: #2c3e50;
+            --light-text: #5f6c7b;
+            --bg: #fff;
+            --sidebar-bg: #f8f9fa;
+            --timeline-color: #e1e4e8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            text-align: justify;
+            color: var(--text);
+            line-height: 1.35;
+            background: #e0e0e0;
+            font-size: 12px;
+        }
+
+        /* A4 Page */
+        .page {
+            background: white;
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            display: grid;
+            
+            /* Gauche (Main) / Droite (Sidebar) */
+            grid-template-columns: 72% 28%; 
+            /* ------------------------------------------- */
+
+            grid-template-rows: auto 1fr;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            overflow: hidden; 
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* HEADER */
+        header {
+            grid-column: 1 / -1;
+            padding: 30px 30px; 
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--accent);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+            min-height: 80px; 
+        }
+
+        .header-left h1 { font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 0; line-height: 1.2;}
+        .header-left .subtitle { font-size: 12px; font-weight: 300; opacity: 0.9; margin-top: 2px; }
+        
+        .header-right { text-align: right; font-size: 10px; display: flex; flex-direction: column; gap: 2px; }
+        .contact-row { display: flex; gap: 15px; justify-content: flex-end; }
+        .header-right a { color: white; display: inline-flex; align-items: center; gap: 5px; }
+        .header-right i { opacity: 0.7; font-size: 10px; }
+
+        /* COLUMNS */
+        .main-content { padding: 20px 30px; display: flex; flex-direction: column; gap: 15px; }
+        .sidebar { background: var(--sidebar-bg); padding: 20px 20px; border-left: 1px solid #eee; }
+
+        /* SECTIONS */
+        h2 {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--light-text);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+            margin-top: 10px;
+        }
+        h2:first-of-type { margin-top: 0; }
+
+        /* JOB BLOCKS */
+        .job-block { 
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid var(--timeline-color);
+            margin-bottom: 10px;
+        }
+        
+        .job-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline;
+            margin-bottom: 2px; 
+        }
+        
+        .job-title { font-weight: 700; font-size: 13px; color: var(--primary); }
+        .company-date { font-size: 11px; color: var(--light-text); text-align: right; }
+        .company { font-weight: 600; color: var(--accent); }
+        .date { font-style: italic; }
+        
+        /* SUMMARY */
+        .summary { 
+            font-size: 12px;
+            color: #444; 
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        /* LISTS */
+        ul { list-style: none; margin-top: 3px; }
+        li { margin-bottom: 2px; position: relative; padding-left: 12px; font-size: 11.5px; color: #444; line-height: 1.35; }
+        li::before {
+            content: "›";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            font-size: 14px;
+        }
+        
+        strong { font-weight: 600; color: var(--text); }
+        .sub-role { font-weight: 600; color: var(--primary); font-size: 11.5px; display: block; margin-top: 4px; margin-bottom: 1px; }
+
+        /* SIDEBAR ITEMS */
+        .skill-group { margin-bottom: 15px; }
+        .skill-title { font-weight: 700; font-size: 11px; margin-bottom: 4px; color: var(--primary); }
+        .tags { display: flex; flex-wrap: wrap; gap: 4px; }
+        .tag {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 9.5px;
+            font-weight: 500;
+            color: #444;
+        }
+
+        .side-project { margin-bottom: 12px; }
+        .project-name { font-weight: 700; font-size: 11px; display: block; margin-bottom: 1px; color: var(--accent);}
+        .project-desc { font-size: 10px; color: var(--light-text); line-height: 1.3; }
+
+        /* PRINT SETTINGS - CRUCIAL */
+        @media print {
+            body { 
+                background: none; 
+                -webkit-print-color-adjust: exact; 
+                print-color-adjust: exact;
+            }
+            .page { 
+                width: 100%; 
+                height: auto; 
+                margin: 0; 
+                box-shadow: none; 
+                border: none; 
+            }
+            @page { 
+                margin: 0; /* FORCE LES MARGES À 0 */
+                size: A4 portrait; 
+            }
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .page { width: 100%; height: auto; grid-template-columns: 1fr; grid-template-rows: auto; }
+            header { flex-direction: column; gap: 10px; text-align: center; }
+            .header-right { text-align: center; align-items: center; }
+            .contact-row { flex-wrap: wrap; justify-content: center; }
+            .sidebar { border-left: none; background: #fafafa; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <header>
+            <div class="header-left">
+                <h1>François Ducatillon</h1>
+                <div class="subtitle">Senior Software Engineer & Tech Lead</div>
+            </div>
+            <div class="header-right">
+                <div class="contact-row">
+                    <a href="mailto:francois@ducatillon.net"><i class="fa-solid fa-envelope"></i> francois@ducatillon.net</a>
+                    <a href="tel:+33622267810"><i class="fa-solid fa-phone"></i> +33 6 22 26 78 10</a>
+                </div>
+                <div class="contact-row">
+                    <a href="https://linkedin.com/in/francoisducatillon" target="_blank"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/francoisducatillon</a>
+                    <a href="https://github.com/francoiducat" target="_blank"><i class="fa-brands fa-github"></i> github.com/francoiducat</a>
+                    <a href="#"><i class="fa-solid fa-location-dot"></i> Lille, France</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            
+            <div class="summary">
+                <strong>Hybrid Senior Engineer</strong> merging a Business School background (EDHEC) with deep technical expertise. Over <strong>13 years at Decathlon</strong>, evolving from Application Owner to <strong>Tech Lead</strong>. Expert in architecting <strong>resilient distributed systems</strong> (Kafka, OpenSearch). I bridge the gap between strategic business needs and technical excellence, focusing on stability, observability, and mentoring.
+            </div>
+
+            <h2>Technical Experience</h2>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <span class="job-title">Tech Lead - Circular Economy (Second Life)</span>
+                    <span class="company-date"><span class="company">Decathlon</span> | <span class="date">2022 – Present</span></span>
+                </div>
+                <ul>
+                    <li><strong>Role:</strong> Architecting the ecosystem for Decathlon's Buyback & Resell business (3 apps: PIM, OFFER, SEARCH).</li>
+                    <li><strong>Distributed Systems:</strong> Designed an <strong>Event-Driven Architecture (Kafka)</strong> to sync millions of products in real-time between PIM and Stores, replacing a PHP legacy monolith.</li>
+                    <li><strong>Search Engine:</strong> Led the implementation of <strong>OpenSearch</strong> for instant product recognition in stores.</li>
+                    <li><strong>Stability:</strong> Built a "Control Tower" (Datadog dashboards) and standardized testing, <strong>drastically reducing run maintenance</strong>.</li>
+                    <li><strong>Mentoring:</strong> Elevated team autonomy through Pair Programming, ADRs, and C4 Diagrams.</li>
+                    <li><em>Prior: Backend Dev (BFF) - Built the first Java microservice for the domain.</em></li>
+                </ul>
+            </div>
+
+            <div class="job-block">
+                <div class="job-header">
+                    <span class="job-title">Backend Developer (Payment & Integrations)</span>
+                    <span class="company-date"><span class="company">Decathlon</span> | <span class="date">2018 – 2021</span></span>
+                </div>
+                <ul>
+                    <span class="sub-role">Partner Integration (2021)</span>
+                    <li>Orchestrated complex data flows (Products, Prices, Receipts) to enable sales in external retailers (Auchan). Ensured data consistency across disparate IS.</li>
+                    
+                    <span class="sub-role">Payment Services (2018-2020)</span>
+                    <li>Developed critical back-office microservices managing store financial flows where zero downtime is mandatory.</li>
+                    <li><strong>Quality First:</strong> Enforced strict craftsmanship standards (TDD, Clean Code) to secure transactions.</li>
+                </ul>
+            </div>
+
+            <h2>Product & Application Ownership</h2>
+            
+            <div class="job-block">
+                <div class="job-header">
+                    <span class="job-title">Application Owner (Gift Card & Insurance)</span>
+                    <span class="company-date"><span class="company">Decathlon</span> | <span class="date">2011 – 2017</span></span>
+                </div>
+                <ul>
+                    <li><strong>Scope:</strong> Owned the full product lifecycle (Roadmap, Budget, Run) for critical business apps.</li>
+                    <li><strong>Key Asset:</strong> Developed a strong "ROI-driven" mindset, recruited teams, and managed partners (FirstData) before transitioning to engineering via Bootcamp.</li>
+                </ul>
+            </div>
+
+            <h2>Early Career & Entrepreneurship</h2>
+            
+            <div class="job-block" style="margin-bottom: 0; border: none;">
+                <div class="job-header">
+                    <span class="job-title">Entrepreneur & Project Manager</span>
+                    <span class="company-date"><span class="date">2008 – 2011</span></span>
+                </div>
+                <ul>
+                    <li><strong>Incubateur APUI (2010-2011):</strong> Co-founded a startup developing a geo-located event discovery web application.</li>
+                    <li><strong>E.Leclerc (2008-2009):</strong> Project Lead for the "Carbon Footprint Labeling" initiative (Retail).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            
+            <h2>Technical Skills</h2>
+            
+            <div class="skill-group">
+                <div class="skill-title">Architecture & Backend</div>
+                <div class="tags">
+                    <span class="tag">Java 21</span>
+                    <span class="tag">Spring Boot</span>
+                    <span class="tag">Kafka</span>
+                    <span class="tag">Python (FastAPI)</span>
+                    <span class="tag">Hexagonal Arch</span>
+                    <span class="tag">DDD</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Data & Ops</div>
+                <div class="tags">
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">OpenSearch</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Datadog</span>
+                    <span class="tag">Helm</span>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <div class="skill-title">Practices</div>
+                <div class="tags">
+                    <span class="tag">TDD / BDD</span>
+                    <span class="tag">CI/CD</span>
+                    <span class="tag">ADR Writing</span>
+                    <span class="tag">Agile / Scrum</span>
+                    <span class="tag">Pair / Mob Programming</span>
+                </div>
+            </div>
+
+            <h2>Side Projects</h2>
+            
+            <div class="side-project">
+                <a href="https://strata.ducatillon.net" target="_blank" class="project-name">Strata App <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="project-desc">
+                    Personal Asset Tracking App. Built with <strong>Python, FastAPI, React</strong> & Hexagonal Architecture. Fully documented via AI workflows.
+                </div>
+            </div>
+
+            <div class="side-project">
+                <a href="https://themes.gohugo.io/themes/hugo-air/" target="_blank" class="project-name">Hugo Air Theme <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="project-desc">
+                    Open-source theme created for the Hugo Static Site Generator.
+                </div>
+            </div>
+
+            <h2>Languages</h2>
+            <div class="skill-group">
+                <div class="project-desc"><strong>French:</strong> Native</div>
+                <div class="project-desc"><strong>English:</strong> Full Professional (C1)</div>
+            </div>
+
+            <h2>Education</h2>
+            <div class="side-project">
+                <span class="project-name">Le Wagon (2017)</span>
+                <div class="project-desc">Coding Bootcamp</div>
+            </div>
+            <div class="side-project">
+                <span class="project-name">EDHEC Business School</span>
+                <div class="project-desc">Master in Management (2008)</div>
+            </div>
+
+            <h2>Interests & Achievements</h2>
+            <div class="side-project">
+                <span class="project-name">Ironman Triathlon <i class="fa-solid fa-person-running"></i></span>
+                <div class="project-desc">
+                    <strong>2x Finisher</strong>. Endurance sports enthusiast (Running, Cycling).
+                </div>
+            </div>
+            <div class="side-project">
+                <span class="project-name">Tech Watch</span>
+                <div class="project-desc">
+                    Active participant in internal Tech Talks & Open Source community.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
