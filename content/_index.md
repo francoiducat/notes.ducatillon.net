@@ -1,31 +1,58 @@
 ---
-title: Introduction
+title: Home
 type: docs
+bookToc: false
 ---
 
-# FDUCAT Notebook
+<div align="center">
 
-Static Website built with [Hugo](https://gohugo.io) and [book theme](https://github.com/alex-shpak/hugo-book), hosted on [github pages](https://pages.github.com/).
+# François Ducatillon
+### Senior Software Engineer & Tech Lead
 
-![Hugo Logo](https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg)
+<a href="mailto:francois@ducatillon.net">
+    <img src="https://img.shields.io/badge/Contact-francois%40ducatillon.net-efefef?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
+</a>
+<a href="https://www.linkedin.com/in/francoisducatillon/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn" />
+</a>
+<a href="https://github.com/francoiducat">
+    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub" />
+</a>
+
+<br><br>
+
+**Hybrid Senior Engineer** merging a Business School background with deep technical expertise.<br>
+Expert in architecting **resilient distributed systems** (Kafka, OpenSearch) and bridging the gap between strategic business needs and technical excellence.
+
+{{< button href="/resume/" >}}📄 View Full Resume{{< /button >}}
+
+</div>
+
+
+
+## 🧪 Workplace Experiments & Patterns
+
+I treat this space as my engineering notebook.
+
+
+## 🚀 Innovation & Side Projects
+
+Beyond my core stack, I actively experiment with new ecosystems and contribute to the Open Source community.
 
 {{% columns ratio="1:1" %}}
 
-## Java
-
-Java App Sandbox with [working examples](https://github.com/francoiducat/JavaAppSandBox).
-
-<--->
-
-## Springboot
-
-Spring Boot apps playground [repos](https://github.com/francoiducat?tab=repositories&q=spring&type=&language=&sort=).
-
+### [🌳 Strata App](https://strata.ducatillon.net/docs)
+**Asset Tracking Platform**
+<br>
+A `sandbox` project built with **Python FastAPI**, **React**, and **Hexagonal Architecture**. Fully documented via AI workflows.
+<br><br>
 
 <--->
 
-## DevOps
-
-Day to day swiss army knife [terminal commands](https://notes.ducatillon.net/docs/devops/day-to-day-bash-commands/).
+### [🌤️ Hugo Air Theme](https://francoiducat.github.io/hugo-air-demo/)
+**Open Source Contribution**
+<br>
+A clean, minimal, and responsive theme created for the Hugo Static Site Generator.
+<br><br>
 
 {{% /columns %}}
