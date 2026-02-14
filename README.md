@@ -1,24 +1,28 @@
-# Hugo static website sources
+# Hugo Site for notes.ducatillon.net
 
-## TL;DR
+This repository hosts the sources of my personal hugo site available at [notes.ducatillon.net](https://notes.ducatillon.net)
 
-- [Hugo Static Web Site Sources Repository](https://github.com/francoiducat/francoiducat.github.io.sources)
-- [Hugo Static Web Site Rendered Content Repository](https://github.com/francoiducat/notes.ducatillon.net)
-- [Hugo Static Web Site URL](https://notes.ducatillon.net)
+It uses the [Hugo Book Theme](https://themes.gohugo.io/themes/hugo-book/)
 
-This repository hosts Hugo sources for [https://notes.ducatillon.net](https://notes.ducatillon.net) static website.
+## Quick Start
 
-## Run locally
+Clone the repo and just run
 
-Run this command
-
-```
-hugo server
+```bash
+hugo serve
 ```
 
-## Deploy to github pages
+## Deploy with github pages
 
-```
-./deploy.sh "deployCommitMessage"
+```bash
+# just git push to main branch
+git push
 ```
 
+## Update theme
+
+
+```bash
+# If needed update the book theme
+git submodule update --remote https://github.com/alex-shpak/hugo-book
+```
