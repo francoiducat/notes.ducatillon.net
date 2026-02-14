@@ -1,13 +1,17 @@
-## Convert PDF to Docx
+# Convert PDF to Docx
 
 ## Prerequesites for macos
 
+```bash
 brew install pipx
 pipx install pdf2docx
+```
 
 ## CLI usage
 
-`pdf2docx convert file.pdf file.docx`
+```bash
+pdf2docx convert file.pdf file.docx
+```
 
 ## Sources
 

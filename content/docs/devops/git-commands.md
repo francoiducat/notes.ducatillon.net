@@ -1,4 +1,4 @@
-# Every day Git commands for developers
+# Every day Git commands
 
 ![git](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1280px-Git-logo.svg.png)
 
@@ -11,25 +11,25 @@ When you add a new file to the `.gitignore` it is not immediatly ignored. It sti
 
 To refresh the git repo
 
-```
+```bash
  git rm -rf --cached .
 ```
 
 or 
 
-```
+```bash
  git rm -rf --cached specifyOnlyTheFolderToResfreshInsteadOftheEntireRepo
 ```
 
 ### Remove remote branch
 
-```
+```bash
 git push origin --delete my-branch
 ```
 
 ### Remove locale branch
 
-```
+```bash
 git branch -D my-branch
 ```
 
@@ -37,22 +37,23 @@ git branch -D my-branch
 
 Switch to branch to rename
 
-```
+```bash
 git branch -m new-branch-name
 ```
 
-
 ### Discard changes on a file
 
-```
- git checkout fileYouDiscardChanges
+```bash
+git restore fileYouDiscardChanges
+# or
+git checkout fileYouDiscardChanges
 ```
 
 ### Show all remotes
 
 This show origin and upstream remotes
 
-```
+```bash
 git remote -v
 git remote show origin #shows branches, tags etc.
 git remote show upstream #shows branches, tags etc.
@@ -61,12 +62,13 @@ git remote show upstream #shows branches, tags etc.
 
 (vs origin remote)
 
-```
+```bash
 git remote add upstream git@github.com:username/git-repo.git
 ```
 
 ### Update git submodule
-```
+
+```bash
 git submodule update --remote --merge
 ```
 
@@ -75,46 +77,53 @@ git submodule update --remote --merge
 Remove a remote file or directory from a Git repository without deleting it from the local filesystem
 
 #### For single file:
-```
+
+```bash
 git rm --cached myremotefiletodelete.log
 git commit -m "remove file from repo"
 git push
 ```
 
 #### For single directory:
-```
+
+```bash
 git rm --cached -r myremotedirectortytodelete
 git commit -m "remove folder from repo"
 git push
 ```
 
 ### Shortcut add & commit all files
+
 Without shortcut
-```
+
+```bash
 git add .
 git commit -m "commit message"
 ```
+
 With shortcut
-```
+
+```bash
 git commit -am "commit message"
 ```
 
 ### Show git history
 
-using pretty format
-```
+Using pretty format
+
+```bash
 git log --pretty=format:"%h - %an, %ar : %s"
 ```
 
 ### Changing old commit messages
 
-```
+```bash
 git rebase -i HEAD~3 
 ```
 
 Then this prompt pops up
 
-```
+```bash
 pick f45c433 update readme 
 pick e023d22 edit README
 pick c245d34 init readme
@@ -143,6 +152,6 @@ Then replace `pick` with `reword`. Save and close.
 
 Finih with git push force:
 
-```
+```bash
 git push --force
 ```
