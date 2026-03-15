@@ -1,14 +1,12 @@
 ---
 title: Charger ses propres fichiers .css et .js dans Wordpress
-description : Charger ses propres fichiers .css et .js dans Wordpress
 date: 2010-12-02
 categories: [ WordPress]
-tags: [css, jquery]
+tags: [css, js, jquery]
 ---
 
-# Charger ses propres fichiers .css et .js dans Wordpress
-
 ## Objectif
+
 Charger un ou plusieurs fichiers .js et/ou .css afin de créer une animation ou ajouter un effet de style.
 
 ## Solution
